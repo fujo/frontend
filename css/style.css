@@ -1126,4 +1126,9 @@ Layout
 --------------------------------------------------------------------------------------------*/
 #section--1 {
   background: #123456;
+  background: url(../bg.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }

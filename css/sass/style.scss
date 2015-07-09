@@ -83,5 +83,5 @@ select { width: 100%; }
 /*-------------------------------------------------------------------------------------------
 Layout
 --------------------------------------------------------------------------------------------*/
-#section--1 { background: #123456; }
+#section--1 { background: #123456; background: url(../bg.jpg) no-repeat center center; @include background-size(cover); }
 
