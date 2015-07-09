@@ -6,12 +6,11 @@ https://learn.jquery.com/code-organization/concepts/
 */
 (function( $ ){
 
-	var 	touch 	= 	Modernizr.touch;
-
-	var 	win 	= 	$(window),
-			doc		=	$(document);
-
-	var APP = {
+	var 	APP 	= APP || {},
+	 		touch 	= 	Modernizr.touch,
+	 		win 	= 	$(window),
+			doc		=	$(document),
+			APP = {
 
 		_: function () {
 			console.log(doc.height())
@@ -36,7 +35,7 @@ https://learn.jquery.com/code-organization/concepts/
 
 		}
 
-	}
+	};
 
 
 	APP._();
