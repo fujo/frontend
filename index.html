@@ -7,6 +7,8 @@
   <meta name="description" content="The Brand New Web Site">
   <meta name="author" content="Jonathan Fuchs">
   <link rel="stylesheet" href="css/style.css">
+  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <script src="js/vendor/modernizr.js"></script>
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -14,10 +16,30 @@
 </head>
 <body>
 
-  <div id="section--1">
-    <div class="container">
-      <h1>salut</h1>
-    </div>
+  <header>
+    <img src="img/logo.png">
+    <a href="#" class="hamburger"><span></span></a>
+    <nav id="mainNav">
+      <a href="#">Item1</a>
+      <nav>
+        <a href="#">Item1.1</a>
+        <a href="#">Item1.2</a>
+        <a href="#">Item1.3</a>
+      </nav>
+      <a href="#">Item2</a>
+      <nav>
+        <a href="#">Item2.1</a>
+        <a href="#">Item2.2</a>
+        <a href="#">Item2.3</a>
+      </nav>
+    </nav>
+  </header>
+
+  <div id="section--1" class="parallax">
+
+    <h1 class="claim">Welcome</h1>
+    <div class="bounce"><i class="fa fa-chevron-down"></i></div>
+
   </div>
   <h1>salut</h1>
   <h1>salut</h1>
