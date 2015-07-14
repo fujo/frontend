@@ -1191,6 +1191,8 @@ header #mainNav a {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  position: relative;
+  border-bottom: 5px solid red;
   @import url(http://weloveiconfonts.com/api/?family=fontawesome);
 }
 #section--1 h1.claim {
@@ -1203,6 +1205,8 @@ header #mainNav a {
   display: table;
   line-height: 100%;
   vertical-align: middle;
+  position: absolute;
+  top: 50%;
 }
 #section--1 .fa {
   width: 59px;
@@ -1224,12 +1228,14 @@ header #mainNav a {
   width: 60px;
   height: 60px;
   margin-left: -30px;
-  /*border: 2px solid #fff;*/
-  background: white;
+  border: 5px solid red;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   border-radius: 50%;
+  background: white;
+}
+#section--1 .bounce.start {
   animation: bounce 2s infinite;
   -webkit-animation: bounce 2s infinite;
   -moz-animation: bounce 2s infinite;

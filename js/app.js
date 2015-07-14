@@ -42,8 +42,28 @@ https://learn.jquery.com/code-organization/concepts/
 		},
 		sectionHero : {
 			_: function(){
-				win.on("load resize", function(e){
+
+				var fadeStart=0, 
+					fadeUntil=win.height();
+
+				win.on("load resize scroll", function(e){
 					$("#section--1").height( win.height() );
+					///////
+    				if(win.scrollTop() == 0) $(".bounce").addClass("start");
+    				else $(".bounce").removeClass("start");
+    				//////
+    				var offset = 	doc.scrollTop(),
+    								opacity=1;
+
+				    if ( offset <= fadeStart ) opacity=1 ;
+				    else if ( offset <= fadeUntil ) opacity=1-offset/fadeUntil
+
+				    console.log(opacity)
+    
+    				$(".fade").css('opacity', opacity);
+				
+
+
 				});
 			}
 		},
@@ -53,10 +73,6 @@ https://learn.jquery.com/code-organization/concepts/
 				win.on("scroll", function(e){
 				    var scrolled = win.scrollTop();
     				$('.parallax').css('background-position', 'center ' + (scrolled * -0.2) + 'px');
-    				if(win.scrollTop != 0) 
-    					$(".bounce").css("animation","paused");
-    				else
-    					$(".bounce").css("animation","bounce 2s infinite");
 				});
 			}
 		}      

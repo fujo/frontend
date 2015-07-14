@@ -26,15 +26,8 @@ body { height: 100%; font-size: 100%; }
 /*-------------------------------------------------------------------------------------------
 Fonts
 --------------------------------------------------------------------------------------------*/
-body { font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  color: #222222;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1.5;
-  font-size: 1em;
- }
-
-
+body { font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; color: #222222; font-style: normal; font-weight: normal; line-height: 1.5; font-size: 1em;
+}
 /*-------------------------------------------------------------------------------------------
 Links
 --------------------------------------------------------------------------------------------*/
@@ -120,9 +113,9 @@ header { position:absolute; top:0; left:0; width:100%; height:100px; line-height
 
 }
 
-#section--1 { background: #123456; background: url(../bg.jpg) no-repeat center center fixed; @include background-size(cover); 
+#section--1 { background: #123456; background: url(../bg.jpg) no-repeat center center fixed; @include background-size(cover);  position: relative; border-bottom:5px solid red;
 
-  h1.claim { font-family: 'Pacifico', cursive; width: 100%; text-align: center; color: white; min-height:100%; vertical-align: middle;display:table;  line-height: 100%; vertical-align: middle; }
+  h1.claim { font-family: 'Pacifico', cursive; width: 100%; text-align: center; color: white; min-height:100%; vertical-align: middle;display:table;  line-height: 100%; vertical-align: middle; position:absolute; top:50%;}
 
   @import url(http://weloveiconfonts.com/api/?family=fontawesome);
 
@@ -138,23 +131,10 @@ header { position:absolute; top:0; left:0; width:100%; height:100px; line-height
 }
 .fa-angle-double-down:before {content: "\f103";}
 
-.bounce {
- position: absolute;
- bottom: -30px;
- left: 50% ;
- width: 60px;
- height: 60px ;
- margin-left:-30px;
- /*border: 2px solid #fff;*/
- background: white;
- -webkit-border-radius:50%;
- -moz-border-radius:50%;
- -ms-border-radius:50%;
- border-radius:50%;
- animation: bounce 2s infinite;
- -webkit-animation: bounce 2s infinite;
- -moz-animation: bounce 2s infinite;
- -o-animation: bounce 2s infinite;
+.bounce{ position: absolute; bottom: -30px; left: 50% ; width: 60px; height: 60px ; margin-left:-30px; border: 5px solid red; @include border-radius(50%); background: white;
+
+  &.start { @include animation(bounce 2s infinite) }
+
 }
  
 
