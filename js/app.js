@@ -30,7 +30,17 @@ https://learn.jquery.com/code-organization/concepts/
 		mainNav : {
 			_: function(){
 
-				this.mainNav = ('#mainNav');
+				this.$m = $('#mainNav');
+				this.$t = $('.hamburger');
+
+				console.log(this.$m);
+
+				
+
+				this.$t.on('click', function(){
+					$this = $(this);
+					$this.toggleClass('active'); 
+				})
 
 			},
 			_open: function(){
