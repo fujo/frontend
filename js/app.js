@@ -18,6 +18,7 @@ https://learn.jquery.com/code-organization/concepts/
 			this.mainNav._();
 			this.sectionHero._();
 			this.parallax._();
+			this.isotope._();
 		},
 		// petit
 		// test
@@ -29,24 +30,22 @@ https://learn.jquery.com/code-organization/concepts/
 		},
 		mainNav : {
 			_: function(){
-
-				this.$m = $('#mainNav');
+				var self = this;
+				this.$m = $('#mainNavWrapper');
 				this.$t = $('.hamburger');
-
-				console.log(this.$m);
-
-				
-
-				this.$t.on('click', function(){
+				this.$t.on('click', function(e){
+					e.preventDefault();
 					$this = $(this);
-					$this.toggleClass('active'); 
-				})
-
+					$this.toggleClass('active');
+					self._open(self.$m);
+					$('body').toggleClass('noScroll');
+				});
 			},
-			_open: function(){
-
+			_open: function(el){
+				var $el = el;
+				$el.toggleClass('open');
 			},
-			_close: function(){
+			_close: function(el){
 
 			}
 		},
@@ -84,6 +83,36 @@ https://learn.jquery.com/code-organization/concepts/
 				    var scrolled = win.scrollTop();
     				$('.parallax').css('background-position', 'center ' + (scrolled * -0.2) + 'px');
 				});
+			}
+		},
+		isotope : {
+			_: function(){
+				$('.grid').isotope({
+					/*
+					itemSelector: '.grid-item',
+					percentPosition: true,
+					masonry: {
+						// use outer width of grid-sizer for columnWidth
+						columnWidth: '.grid-sizer'
+					}
+					*/
+					layoutMode: 'fitRows',
+					itemSelector: '.grid-item',
+					percentPosition: true,
+					fitRows: {
+					  gutter: '.gutter-sizer'
+					}
+				});
+			}
+		},
+		helpers : {
+			_: function() {
+
+
+
+			},
+			_scrollToMore: function() {
+
 			}
 		}      
 
