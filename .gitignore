@@ -1,3 +1,6 @@
 # no root jpeg files
 /*.jpg
 /*.jpeg
+
+# cache
+/css/sass/.sass-cache/

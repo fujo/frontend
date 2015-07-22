@@ -13,13 +13,72 @@ https://learn.jquery.com/code-organization/concepts/
 			APP = {
 
 		_: function () {
-			console.log(doc.height())
+			this.hero._();
 			this.test._();
 			this.mainNav._();
 			this.sectionHero._();
 			this.parallax._();
 			this.isotope._();
+			this.helpers._();
 		},
+
+		hero : {
+			_: function() {
+
+				var self = this;
+
+				this.$i = $('.mhover');
+
+				console.log(this.$i);
+
+				function throttle(fn, delay) {
+					var allowSample = true;
+
+					return function(e) {
+						if (allowSample) {
+							allowSample = false;
+							setTimeout(function() { allowSample = true; }, delay);
+							fn(e);
+						}
+					};
+				}
+
+				this.$i.on('hover', function(){
+
+					//console.log('hover');
+
+				});
+
+				window.addEventListener('mousemove', throttle(function(ev) {
+
+					var xVal 	= -1/(win.height/2)*ev.clientY + 1,
+						yVal 	= 1/(win.width/2)*ev.clientX - 1,
+						transX	= 20/(win.width)*ev.clientX - 10,
+						transY 	= 20/(win.height)*ev.clientY - 10,
+						transZ 	= 100/(win.height)*ev.clientY - 50;
+
+					console.log(transZ);
+
+					self.$i.css({
+
+					
+    					//'-moz-transform': 	'perspective(1000px) translate3d(' + transX + 'px,' + transY + 'px,' + transZ + 'px) rotate3d(' + xVal + ',' + yVal + ',0,2deg)';
+
+						//'-webkit-transform':'perspective(1000px) translate3d(' + transX + 'px,' + transY + 'px,' + transZ + 'px) rotate3d(' + xVal + ',' + yVal + ',0,2deg)',
+						//'-moz-transform': 'perspective(1000px) translate3d(" + transX + "px," + transY + "px," + transZ + "px) rotate3d(" + xVal + "," + yVal + ",0,2deg)'
+
+					});
+
+					//self.$i.style.WebkitTransform = 'perspective(1000px) translate3d(' + transX + 'px,' + transY + 'px,' + transZ + 'px) rotate3d(' + xVal + ',' + yVal + ',0,2deg)';
+					//self.$i.style.transform = 'perspective(1000px) translate3d(' + transX + 'px,' + transY + 'px,' + transZ + 'px) rotate3d(' + xVal + ',' + yVal + ',0,2deg)';
+				
+				}, 100));
+
+
+			}
+
+		},
+
 		// petit
 		// test
 		test : {
@@ -56,27 +115,37 @@ https://learn.jquery.com/code-organization/concepts/
 					fadeUntil=win.height();
 
 				win.on("load resize scroll", function(e){
-					$("#section--1").height( win.height() );
+					$("#hero").height( win.height() );
 					///////
     				if(win.scrollTop() == 0) $(".bounce").addClass("start");
     				else $(".bounce").removeClass("start");
     				//////
+    				var topH 	= $(".fade").position().top,
+    					dH 		= doc.scrollTop() - topH;
+
+    					console.log(topH +' - '+ dH);
+
+    				//$(".fade").css('opacity', opacity);
+
+
+
+    				/*
     				var offset = 	doc.scrollTop(),
     								opacity=1;
 
 				    if ( offset <= fadeStart ) opacity=1 ;
 				    else if ( offset <= fadeUntil ) opacity=1-offset/fadeUntil
-
-				    console.log(opacity)
+					*/
+				    //console.log(opacity)
     
-    				$(".fade").css('opacity', opacity);
+    				//$(".fade").css('opacity', opacity);
 				
 
 
 				});
 			}
 		},
-		// parallax
+		/* parallax */
 		parallax : {  
 			_: function(){
 				win.on("scroll", function(e){
@@ -85,6 +154,9 @@ https://learn.jquery.com/code-organization/concepts/
 				});
 			}
 		},
+
+
+
 		isotope : {
 			_: function(){
 				$('.grid').isotope({
@@ -105,15 +177,34 @@ https://learn.jquery.com/code-organization/concepts/
 				});
 			}
 		},
+
+		/* interactiv and css things */
+
 		helpers : {
+
 			_: function() {
-
-
-
+				this.scrollToMore._();
 			},
-			_scrollToMore: function() {
 
+			scrollToMore: {
+				options: {
+					animScrollSpeed: 350
+				},
+				_: function() {
+					this.$sfm = $('.scrolly');
+
+					if(this.$sfm.length < 1) return;
+
+					var options = this.options;
+
+					this.$sfm.on('click', function(e){
+						e.preventDefault();
+						var  $wH = win.height();
+						$('html, body').animate({scrollTop: $wH }, options.animScrollSpeed);
+					});
+				}
 			}
+
 		}      
 
 	};

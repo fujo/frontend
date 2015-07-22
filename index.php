@@ -16,17 +16,40 @@
 
 get_header(); ?>
 
+  <section id="hero" class="parallax">
+      <!--
+      <div class="static"></div>
+      <div class="mhover"></div>
+      -->
+      <div class="claim fade">Hola Que tal?</div>
+      <div class="bounce scrolly">&darr;</div>
 
-  <section id="section--1" class="parallax">
-    <h1 class="claim fade">Hola Que tal?</h1>
-    <div class="bounce">
-    <!--
-    <i class="fa fa-hand-o-down"></i>
-	-->
-	&darr;
-	
-    </div>
   </section>
+
+  <section class="container">
+
+    <div class="row">
+      <h2>Series</h2>
+    </div>
+
+    <div class="row">
+      <div class="six columns text">
+        <h3>dignissim</h3>
+        <p>Nunc bibendum nibh nulla, nec dictum ipsum finibus eget.</p>
+      </div>
+      <div class="six columns image">1/3
+        <figure></figure>
+        <button type="button">More</button> 
+      </div>
+    </div>
+
+
+
+
+
+  </section>
+
+
 
  	<div class="row">
    		<div class="six columns">
