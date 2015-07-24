@@ -26,6 +26,17 @@
  */
 
 /**
+* includes functions to keep functions.php clean
+*/
+$dir = new DirectoryIterator(dirname(__FILE__).'/functions/');
+foreach ($dir as $fileinfo) {
+    if (!$fileinfo->isDot()) {
+      //var_dump($fileinfo->getFilename());
+      include_once 'functions/'.$fileinfo->getFilename();
+    }
+}
+
+/**
 *	Register Menus
 *	https://codex.wordpress.org/Navigation_Menus
 */
@@ -39,3 +50,5 @@ function register_my_menus() {
   );
 }
 add_action( 'init', 'register_my_menus' );
+
+

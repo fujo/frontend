@@ -21,7 +21,7 @@ get_header(); ?>
       <div class="static"></div>
       <div class="mhover"></div>
       -->
-      <div class="claim fade">Hola Que tal?</div>
+      <div class="jumbotron fade">Hola Que tal?</div>
       <div class="bounce scrolly">&darr;</div>
 
   </section>
@@ -43,11 +43,19 @@ get_header(); ?>
       </div>
     </div>
 
+  </section>
 
+  <section>
 
+    <figure>
 
+    <noscript><img src="img/screen.JPG" alt="alttext"></noscript>
+    </figure>
 
   </section>
+
+
+
 
 
 

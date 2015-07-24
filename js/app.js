@@ -205,7 +205,20 @@ https://learn.jquery.com/code-organization/concepts/
 				}
 			}
 
-		}      
+		},
+
+		/* Google Analytics */
+
+		googleAnalytics : {
+
+			options : {
+
+			},
+			_: function(){
+
+			}
+
+		}     
 
 	};
 

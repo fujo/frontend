@@ -478,7 +478,7 @@ th {
 
 /* For devices larger than 400px */
 @media (min-width: 400px) {
-  /* line 8, sass/modules/_grid.scss */
+  /* line 7, sass/modules/_grid.scss */
   .container {
     width: 85%;
     padding: 0;
@@ -486,180 +486,180 @@ th {
 }
 /* For devices larger than 550px */
 @media (min-width: 550px) {
-  /* line 15, sass/modules/_grid.scss */
+  /* line 13, sass/modules/_grid.scss */
   .container {
     width: 80%;
   }
 
-  /* line 17, sass/modules/_grid.scss */
+  /* line 15, sass/modules/_grid.scss */
   .column,
   .columns {
     margin-left: 4%;
   }
 
-  /* line 20, sass/modules/_grid.scss */
+  /* line 18, sass/modules/_grid.scss */
   .column:first-child,
   .columns:first-child {
     margin-left: 0;
   }
 
-  /* line 24, sass/modules/_grid.scss */
+  /* line 22, sass/modules/_grid.scss */
   .one.column,
   .one.columns {
     width: 4.66666666667%;
   }
 
-  /* line 26, sass/modules/_grid.scss */
+  /* line 24, sass/modules/_grid.scss */
   .two.columns {
     width: 13.3333333333%;
   }
 
-  /* line 27, sass/modules/_grid.scss */
+  /* line 25, sass/modules/_grid.scss */
   .three.columns {
     width: 22%;
   }
 
-  /* line 28, sass/modules/_grid.scss */
+  /* line 26, sass/modules/_grid.scss */
   .four.columns {
     width: 30.6666666667%;
   }
 
-  /* line 29, sass/modules/_grid.scss */
+  /* line 27, sass/modules/_grid.scss */
   .five.columns {
     width: 39.3333333333%;
   }
 
-  /* line 30, sass/modules/_grid.scss */
+  /* line 28, sass/modules/_grid.scss */
   .six.columns {
     width: 48%;
   }
 
-  /* line 31, sass/modules/_grid.scss */
+  /* line 29, sass/modules/_grid.scss */
   .seven.columns {
     width: 56.6666666667%;
   }
 
-  /* line 32, sass/modules/_grid.scss */
+  /* line 30, sass/modules/_grid.scss */
   .eight.columns {
     width: 65.3333333333%;
   }
 
-  /* line 33, sass/modules/_grid.scss */
+  /* line 31, sass/modules/_grid.scss */
   .nine.columns {
     width: 74.0%;
   }
 
-  /* line 34, sass/modules/_grid.scss */
+  /* line 32, sass/modules/_grid.scss */
   .ten.columns {
     width: 82.6666666667%;
   }
 
-  /* line 35, sass/modules/_grid.scss */
+  /* line 33, sass/modules/_grid.scss */
   .eleven.columns {
     width: 91.3333333333%;
   }
 
-  /* line 36, sass/modules/_grid.scss */
+  /* line 34, sass/modules/_grid.scss */
   .twelve.columns {
     width: 100%;
     margin-left: 0;
   }
 
-  /* line 38, sass/modules/_grid.scss */
+  /* line 36, sass/modules/_grid.scss */
   .one-third.column {
     width: 30.6666666667%;
   }
 
-  /* line 39, sass/modules/_grid.scss */
+  /* line 37, sass/modules/_grid.scss */
   .two-thirds.column {
     width: 65.3333333333%;
   }
 
-  /* line 41, sass/modules/_grid.scss */
+  /* line 39, sass/modules/_grid.scss */
   .one-half.column {
     width: 48%;
   }
 
   /* Offsets */
-  /* line 44, sass/modules/_grid.scss */
+  /* line 42, sass/modules/_grid.scss */
   .offset-by-one.column,
   .offset-by-one.columns {
     margin-left: 8.66666666667%;
   }
 
-  /* line 46, sass/modules/_grid.scss */
+  /* line 44, sass/modules/_grid.scss */
   .offset-by-two.column,
   .offset-by-two.columns {
     margin-left: 17.3333333333%;
   }
 
-  /* line 48, sass/modules/_grid.scss */
+  /* line 46, sass/modules/_grid.scss */
   .offset-by-three.column,
   .offset-by-three.columns {
     margin-left: 26%;
   }
 
-  /* line 50, sass/modules/_grid.scss */
+  /* line 48, sass/modules/_grid.scss */
   .offset-by-four.column,
   .offset-by-four.columns {
     margin-left: 34.6666666667%;
   }
 
-  /* line 52, sass/modules/_grid.scss */
+  /* line 50, sass/modules/_grid.scss */
   .offset-by-five.column,
   .offset-by-five.columns {
     margin-left: 43.3333333333%;
   }
 
-  /* line 54, sass/modules/_grid.scss */
+  /* line 52, sass/modules/_grid.scss */
   .offset-by-six.column,
   .offset-by-six.columns {
     margin-left: 52%;
   }
 
-  /* line 56, sass/modules/_grid.scss */
+  /* line 54, sass/modules/_grid.scss */
   .offset-by-seven.column,
   .offset-by-seven.columns {
     margin-left: 60.6666666667%;
   }
 
-  /* line 58, sass/modules/_grid.scss */
+  /* line 56, sass/modules/_grid.scss */
   .offset-by-eight.column,
   .offset-by-eight.columns {
     margin-left: 69.3333333333%;
   }
 
-  /* line 60, sass/modules/_grid.scss */
+  /* line 58, sass/modules/_grid.scss */
   .offset-by-nine.column,
   .offset-by-nine.columns {
     margin-left: 78.0%;
   }
 
-  /* line 62, sass/modules/_grid.scss */
+  /* line 60, sass/modules/_grid.scss */
   .offset-by-ten.column,
   .offset-by-ten.columns {
     margin-left: 86.6666666667%;
   }
 
-  /* line 64, sass/modules/_grid.scss */
+  /* line 62, sass/modules/_grid.scss */
   .offset-by-eleven.column,
   .offset-by-eleven.columns {
     margin-left: 95.3333333333%;
   }
 
-  /* line 67, sass/modules/_grid.scss */
+  /* line 65, sass/modules/_grid.scss */
   .offset-by-one-third.column,
   .offset-by-one-third.columns {
     margin-left: 34.6666666667%;
   }
 
-  /* line 69, sass/modules/_grid.scss */
+  /* line 67, sass/modules/_grid.scss */
   .offset-by-two-thirds.column,
   .offset-by-two-thirds.columns {
     margin-left: 69.3333333333%;
   }
 
-  /* line 72, sass/modules/_grid.scss */
+  /* line 70, sass/modules/_grid.scss */
   .offset-by-one-half.column,
   .offset-by-one-half.columns {
     margin-left: 52%;
@@ -668,7 +668,7 @@ th {
 /* Clearing
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /* Self Clearing Goodness */
-/* line 81, sass/modules/_grid.scss */
+/* line 79, sass/modules/_grid.scss */
 .container:after,
 .row:after,
 .u-cf {
@@ -738,19 +738,19 @@ h1 {
 
 /* line 53, sass/style.scss */
 h1 {
-  font: 700 2.5em/1.5em 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font: 700 5em/1.5em 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   letter-spacing: -.1em;
 }
 
 /* line 54, sass/style.scss */
 h2 {
-  font: 700 2em/1.5em;
+  font: 400 4em/1.5em;
   letter-spacing: -.1em;
 }
 
 /* line 55, sass/style.scss */
 h3 {
-  font: 400 1.5px/1.5em;
+  font: 400 3em/1.5em;
   text-transform: uppercase;
   letter-spacing: -.1em;
 }
@@ -763,12 +763,12 @@ p {
 /*-------------------------------------------------------------------------------------------
 Links
 --------------------------------------------------------------------------------------------*/
-/* line 63, sass/style.scss */
+/* line 62, sass/style.scss */
 a {
   text-decoration: none;
 }
 
-/* line 64, sass/style.scss */
+/* line 63, sass/style.scss */
 a:hover {
   cursor: pointer;
 }
@@ -776,18 +776,18 @@ a:hover {
 /*-------------------------------------------------------------------------------------------
 Img
 --------------------------------------------------------------------------------------------*/
-/* line 68, sass/style.scss */
+/* line 67, sass/style.scss */
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* line 69, sass/style.scss */
+/* line 68, sass/style.scss */
 img {
   -ms-interpolation-mode: bicubic;
 }
 
-/* line 70, sass/style.scss */
+/* line 69, sass/style.scss */
 img {
   display: inline-block;
   vertical-align: middle;
@@ -799,7 +799,7 @@ img {
 /*-------------------------------------------------------------------------------------------
 Google Maps
 --------------------------------------------------------------------------------------------*/
-/* line 80, sass/style.scss */
+/* line 79, sass/style.scss */
 #map_canvas img,
 #map_canvas embed,
 #map_canvas object,
@@ -815,38 +815,38 @@ Google Maps
 /*-------------------------------------------------------------------------------------------
 Misc Helpers
 --------------------------------------------------------------------------------------------*/
-/* line 92, sass/style.scss */
+/* line 91, sass/style.scss */
 .left {
   float: left !important;
 }
 
-/* line 93, sass/style.scss */
+/* line 92, sass/style.scss */
 .right {
   float: right !important;
 }
 
-/* line 94, sass/style.scss */
+/* line 93, sass/style.scss */
 .clearfix:before, .clearfix:after {
   content: " ";
   display: table;
 }
 
-/* line 95, sass/style.scss */
+/* line 94, sass/style.scss */
 .clearfix:after {
   clear: both;
 }
 
-/* line 96, sass/style.scss */
+/* line 95, sass/style.scss */
 .hide {
   display: none;
 }
 
-/* line 97, sass/style.scss */
+/* line 96, sass/style.scss */
 .invisible {
   visibility: hidden;
 }
 
-/* line 98, sass/style.scss */
+/* line 97, sass/style.scss */
 .antialiased {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -855,13 +855,13 @@ Misc Helpers
 /*-------------------------------------------------------------------------------------------
 Form
 --------------------------------------------------------------------------------------------*/
-/* line 102, sass/style.scss */
+/* line 101, sass/style.scss */
 textarea {
   height: auto;
   min-height: 50px;
 }
 
-/* line 103, sass/style.scss */
+/* line 102, sass/style.scss */
 select {
   width: 100%;
 }
@@ -869,12 +869,12 @@ select {
 /*-------------------------------------------------------------------------------------------
 Layout
 --------------------------------------------------------------------------------------------*/
-/* line 107, sass/style.scss */
+/* line 106, sass/style.scss */
 body.noScroll {
   overflow: hidden;
 }
 
-/* line 109, sass/style.scss */
+/* line 108, sass/style.scss */
 #mainNavWrapper {
   position: fixed;
   top: 0;
@@ -888,16 +888,16 @@ body.noScroll {
   opacity: 0;
   min-height: 100%;
 }
-/* line 111, sass/style.scss */
+/* line 110, sass/style.scss */
 #mainNavWrapper.open {
   display: block;
   opacity: 1;
 }
-/* line 113, sass/style.scss */
+/* line 112, sass/style.scss */
 #mainNavWrapper #mainNav {
   list-style-type: none;
 }
-/* line 115, sass/style.scss */
+/* line 114, sass/style.scss */
 #mainNavWrapper #mainNav li a {
   font-weight: 300;
   text-transform: uppercase;
@@ -905,7 +905,7 @@ body.noScroll {
   text-align: center;
 }
 
-/* line 121, sass/style.scss */
+/* line 120, sass/style.scss */
 header {
   z-index: 3;
   position: fixed;
@@ -918,7 +918,7 @@ header {
   opacity: .9;
   height: 75px;
 }
-/* line 123, sass/style.scss */
+/* line 122, sass/style.scss */
 header #logo {
   float: left;
   line-height: 75px;
@@ -926,7 +926,7 @@ header #logo {
   font-weight: 700;
   padding: 0 0 0 25px;
 }
-/* line 125, sass/style.scss */
+/* line 124, sass/style.scss */
 header a.hamburger {
   border-left: 1px solid #444;
   line-height: 75px;
@@ -939,7 +939,7 @@ header a.hamburger {
   text-align: center;
   display: block;
 }
-/* line 127, sass/style.scss */
+/* line 126, sass/style.scss */
 header a.hamburger span,
 header a.hamburger span:before,
 header a.hamburger span:after {
@@ -955,32 +955,32 @@ header a.hamburger span:after {
   transition: all 100ms ease-in-out;
   -webkit-transition: all 100ms ease-in-out;
 }
-/* line 131, sass/style.scss */
+/* line 130, sass/style.scss */
 header a.hamburger span {
   top: 35px;
 }
-/* line 133, sass/style.scss */
+/* line 132, sass/style.scss */
 header a.hamburger span:before {
   top: -10px;
   left: 0;
 }
-/* line 135, sass/style.scss */
+/* line 134, sass/style.scss */
 header a.hamburger span:after {
   bottom: -10px;
   left: 0;
 }
-/* line 139, sass/style.scss */
+/* line 138, sass/style.scss */
 header a.hamburger.active span {
   background-color: transparent;
 }
-/* line 141, sass/style.scss */
+/* line 140, sass/style.scss */
 header a.hamburger.active span:before {
   top: 0;
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   background-color: black !important;
 }
-/* line 143, sass/style.scss */
+/* line 142, sass/style.scss */
 header a.hamburger.active span:after {
   top: 0;
   transform: rotate(-45deg);
@@ -988,7 +988,7 @@ header a.hamburger.active span:after {
   background-color: black !important;
 }
 
-/* line 152, sass/style.scss */
+/* line 151, sass/style.scss */
 section#hero {
   position: relative;
   background: #123456 url(../bg2.jpg) no-repeat center center fixed;
@@ -1004,7 +1004,7 @@ section#hero {
   > div { position: absolute; width: 100%; height: 100%; }
   */
 }
-/* line 161, sass/style.scss */
+/* line 160, sass/style.scss */
 section#hero .claim {
   font-size: 5em;
   text-transform: uppercase;
@@ -1020,7 +1020,7 @@ section#hero .claim {
   position: absolute;
   top: 40%;
 }
-/* line 163, sass/style.scss */
+/* line 162, sass/style.scss */
 section#hero .bounce {
   position: absolute;
   bottom: 0px;
@@ -1032,7 +1032,7 @@ section#hero .bounce {
   font-size: 25px;
   cursor: pointer;
 }
-/* line 165, sass/style.scss */
+/* line 164, sass/style.scss */
 section#hero .bounce.start {
   animation: bounce 2s infinite;
   -webkit-animation: bounce 2s infinite;
@@ -1117,14 +1117,14 @@ section#hero .bounce.start {
   }
 }
 /* ---- grid ---- */
-/* line 233, sass/style.scss */
+/* line 232, sass/style.scss */
 .grid {
   background: #DDD;
   max-width: 1200px;
 }
 
 /* clear fix */
-/* line 239, sass/style.scss */
+/* line 238, sass/style.scss */
 .grid:after {
   content: '';
   display: block;
@@ -1133,13 +1133,13 @@ section#hero .bounce.start {
 
 /* ---- .grid-item ---- */
 /* 5 columns, percentage width */
-/* line 248, sass/style.scss */
+/* line 247, sass/style.scss */
 .grid-item,
 .grid-sizer {
   width: 22%;
 }
 
-/* line 253, sass/style.scss */
+/* line 252, sass/style.scss */
 .grid-item {
   float: left;
   height: 100px;
@@ -1148,17 +1148,17 @@ section#hero .bounce.start {
   border-color: rgba(0, 0, 0, 0.7);
 }
 
-/* line 261, sass/style.scss */
+/* line 260, sass/style.scss */
 .gutter-sizer {
   width: 4%;
 }
 
-/* line 263, sass/style.scss */
+/* line 262, sass/style.scss */
 .grid-item--width2 {
   width: 48%;
 }
 
-/* line 264, sass/style.scss */
+/* line 263, sass/style.scss */
 .grid-item--height2 {
   height: 200px;
 }
