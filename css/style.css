@@ -1,5 +1,5 @@
-@charset "UTF-8";
-/* test
+@charset "CP850";
+/* 
 Theme Name: JNTHN_CH
 Theme URI: 
 Author: @jnthnfchs
@@ -14,10 +14,7 @@ Text Domain:
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
-/*-------------------------------------------------------------------------------------------
-Jonathan Fuchs @jnthnfchs
----------------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------
+/*---------------------------------------------------------------------------------------------
 /sass/modules
 --------------------------------------------------------------------------------------------*/
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -27,23 +24,21 @@ Jonathan Fuchs @jnthnfchs
  *    without disabling user zoom.
  */
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
-/* line 9, sass/modules/_normalize.scss */
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 html {
   font-family: sans-serif;
   /* 1 */
   -ms-text-size-adjust: 100%;
   /* 2 */
   -webkit-text-size-adjust: 100%;
-  /* 2 */
-}
+  /* 2 */ }
 
 /**
  * Remove default margin.
  */
-/* line 19, sass/modules/_normalize.scss */
 body {
-  margin: 0;
-}
+  margin: 0; }
 
 /* HTML5 display definitions
    ========================================================================== */
@@ -53,7 +48,6 @@ body {
  * and Firefox.
  * Correct `block` display not defined for `main` in IE 11.
  */
-/* line 33, sass/modules/_normalize.scss */
 article,
 aside,
 details,
@@ -67,14 +61,12 @@ menu,
 nav,
 section,
 summary {
-  display: block;
-}
+  display: block; }
 
 /**
  * 1. Correct `inline-block` display not defined in IE 8/9.
  * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
  */
-/* line 54, sass/modules/_normalize.scss */
 audio,
 canvas,
 progress,
@@ -82,181 +74,142 @@ video {
   display: inline-block;
   /* 1 */
   vertical-align: baseline;
-  /* 2 */
-}
+  /* 2 */ }
 
 /**
  * Prevent modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS 5 devices.
  */
-/* line 67, sass/modules/_normalize.scss */
 audio:not([controls]) {
   display: none;
-  height: 0;
-}
+  height: 0; }
 
 /**
  * Address `[hidden]` styling not present in IE 8/9/10.
  * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
  */
-/* line 77, sass/modules/_normalize.scss */
 [hidden],
 template {
-  display: none;
-}
+  display: none; }
 
 /* Links
    ========================================================================== */
 /**
  * Remove the gray background color from active links in IE 10.
  */
-/* line 89, sass/modules/_normalize.scss */
 a {
-  background-color: transparent;
-}
+  background-color: transparent; }
 
 /**
  * Improve readability of focused elements when they are also in an
  * active/hover state.
  */
-/* line 98, sass/modules/_normalize.scss */
 a:active,
 a:hover {
-  outline: 0;
-}
+  outline: 0; }
 
 /* Text-level semantics
    ========================================================================== */
 /**
  * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
  */
-/* line 110, sass/modules/_normalize.scss */
 abbr[title] {
-  border-bottom: 1px dotted;
-}
+  border-bottom: 1px dotted; }
 
 /**
  * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
  */
-/* line 118, sass/modules/_normalize.scss */
 b,
 strong {
-  font-weight: bold;
-}
+  font-weight: bold; }
 
 /**
  * Address styling not present in Safari and Chrome.
  */
-/* line 127, sass/modules/_normalize.scss */
 dfn {
-  font-style: italic;
-}
+  font-style: italic; }
 
 /**
  * Address variable `h1` font-size and margin within `section` and `article`
  * contexts in Firefox 4+, Safari, and Chrome.
  */
-/* line 136, sass/modules/_normalize.scss */
 h1 {
   font-size: 2em;
-  margin: 0.67em 0;
-}
+  margin: 0.67em 0; }
 
 /**
  * Address styling not present in IE 8/9.
  */
-/* line 145, sass/modules/_normalize.scss */
 mark {
   background: #ff0;
-  color: #000;
-}
+  color: #000; }
 
 /**
  * Address inconsistent and variable font size in all browsers.
  */
-/* line 154, sass/modules/_normalize.scss */
 small {
-  font-size: 80%;
-}
+  font-size: 80%; }
 
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
-/* line 162, sass/modules/_normalize.scss */
 sub,
 sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
-  vertical-align: baseline;
-}
+  vertical-align: baseline; }
 
-/* line 170, sass/modules/_normalize.scss */
 sup {
-  top: -0.5em;
-}
+  top: -0.5em; }
 
-/* line 174, sass/modules/_normalize.scss */
 sub {
-  bottom: -0.25em;
-}
+  bottom: -0.25em; }
 
 /* Embedded content
    ========================================================================== */
 /**
  * Remove border when inside `a` element in IE 8/9/10.
  */
-/* line 185, sass/modules/_normalize.scss */
 img {
-  border: 0;
-}
+  border: 0; }
 
 /**
  * Correct overflow not hidden in IE 9/10/11.
  */
-/* line 193, sass/modules/_normalize.scss */
 svg:not(:root) {
-  overflow: hidden;
-}
+  overflow: hidden; }
 
 /* Grouping content
    ========================================================================== */
 /**
  * Address margin not present in IE 8/9 and Safari.
  */
-/* line 204, sass/modules/_normalize.scss */
 figure {
-  margin: 1em 40px;
-}
+  margin: 1em 40px; }
 
 /**
  * Address differences between Firefox and other browsers.
  */
-/* line 212, sass/modules/_normalize.scss */
 hr {
   box-sizing: content-box;
-  height: 0;
-}
+  height: 0; }
 
 /**
  * Contain overflow in all browsers.
  */
-/* line 221, sass/modules/_normalize.scss */
 pre {
-  overflow: auto;
-}
+  overflow: auto; }
 
 /**
  * Address odd `em`-unit font size rendering in all browsers.
  */
-/* line 229, sass/modules/_normalize.scss */
 code,
 kbd,
 pre,
 samp {
   font-family: monospace, monospace;
-  font-size: 1em;
-}
+  font-size: 1em; }
 
 /* Forms
    ========================================================================== */
@@ -270,7 +223,6 @@ samp {
  * 2. Correct font properties not being inherited.
  * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
  */
-/* line 252, sass/modules/_normalize.scss */
 button,
 input,
 optgroup,
@@ -281,16 +233,13 @@ textarea {
   font: inherit;
   /* 2 */
   margin: 0;
-  /* 3 */
-}
+  /* 3 */ }
 
 /**
  * Address `overflow` set to `hidden` in IE 8/9/10/11.
  */
-/* line 266, sass/modules/_normalize.scss */
 button {
-  overflow: visible;
-}
+  overflow: visible; }
 
 /**
  * Address inconsistent `text-transform` inheritance for `button` and `select`.
@@ -298,11 +247,9 @@ button {
  * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
  * Correct `select` style inheritance in Firefox.
  */
-/* line 277, sass/modules/_normalize.scss */
 button,
 select {
-  text-transform: none;
-}
+  text-transform: none; }
 
 /**
  * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
@@ -311,7 +258,6 @@ select {
  * 3. Improve usability and consistency of cursor style between image-type
  *    `input` and others.
  */
-/* line 290, sass/modules/_normalize.scss */
 button,
 html input[type="button"],
 input[type="reset"],
@@ -319,36 +265,29 @@ input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
   cursor: pointer;
-  /* 3 */
-}
+  /* 3 */ }
 
 /**
  * Re-set default cursor for disabled elements.
  */
-/* line 302, sass/modules/_normalize.scss */
 button[disabled],
 html input[disabled] {
-  cursor: default;
-}
+  cursor: default; }
 
 /**
  * Remove inner padding and border in Firefox 4+.
  */
-/* line 311, sass/modules/_normalize.scss */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
-  padding: 0;
-}
+  padding: 0; }
 
 /**
  * Address Firefox 4+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
-/* line 322, sass/modules/_normalize.scss */
 input {
-  line-height: normal;
-}
+  line-height: normal; }
 
 /**
  * It's recommended that you don't attempt to style these elements.
@@ -357,449 +296,298 @@ input {
  * 1. Address box sizing set to `content-box` in IE 8/9/10.
  * 2. Remove excess padding in IE 8/9/10.
  */
-/* line 334, sass/modules/_normalize.scss */
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
-  /* 2 */
-}
+  /* 2 */ }
 
 /**
  * Fix the cursor style for Chrome's increment/decrement buttons. For certain
  * `font-size` values of the `input`, it causes the cursor style of the
  * decrement button to change from `default` to `text`.
  */
-/* line 346, sass/modules/_normalize.scss */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
+  height: auto; }
 
 /**
  * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
  * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
  */
-/* line 356, sass/modules/_normalize.scss */
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
   box-sizing: content-box;
-  /* 2 */
-}
+  /* 2 */ }
 
 /**
  * Remove inner padding and search cancel button in Safari and Chrome on OS X.
  * Safari (but not Chrome) clips the cancel button when the search input has
  * padding (and `textfield` appearance).
  */
-/* line 367, sass/modules/_normalize.scss */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
+  -webkit-appearance: none; }
 
 /**
  * Define consistent border, margin, and padding.
  */
-/* line 376, sass/modules/_normalize.scss */
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
-}
+  padding: 0.35em 0.625em 0.75em; }
 
 /**
  * 1. Correct `color` not being inherited in IE 8/9/10/11.
  * 2. Remove padding so people aren't caught out if they zero out fieldsets.
  */
-/* line 387, sass/modules/_normalize.scss */
 legend {
   border: 0;
   /* 1 */
   padding: 0;
-  /* 2 */
-}
+  /* 2 */ }
 
 /**
  * Remove default vertical scrollbar in IE 8/9/10/11.
  */
-/* line 396, sass/modules/_normalize.scss */
 textarea {
-  overflow: auto;
-}
+  overflow: auto; }
 
 /**
  * Don't inherit the `font-weight` (applied by a rule above).
  * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
  */
-/* line 405, sass/modules/_normalize.scss */
 optgroup {
-  font-weight: bold;
-}
+  font-weight: bold; }
 
 /* Tables
    ========================================================================== */
 /**
  * Remove most spacing between table cells.
  */
-/* line 416, sass/modules/_normalize.scss */
 table {
   border-collapse: collapse;
-  border-spacing: 0;
-}
+  border-spacing: 0; }
 
-/* line 421, sass/modules/_normalize.scss */
 td,
 th {
-  padding: 0;
-}
+  padding: 0; }
 
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-/* line 3, sass/modules/_grid.scss */
 .container {
   position: relative;
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
-/* line 3, sass/modules/_grid.scss */
 .column,
 .columns {
   width: 100%;
   float: left;
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 /* For devices larger than 400px */
 @media (min-width: 400px) {
-  /* line 7, sass/modules/_grid.scss */
   .container {
     width: 85%;
-    padding: 0;
-  }
-}
+    padding: 0; } }
 /* For devices larger than 550px */
 @media (min-width: 550px) {
-  /* line 13, sass/modules/_grid.scss */
   .container {
-    width: 80%;
-  }
+    width: 80%; }
 
-  /* line 15, sass/modules/_grid.scss */
   .column,
   .columns {
-    margin-left: 4%;
-  }
+    margin-left: 4%; }
 
-  /* line 18, sass/modules/_grid.scss */
   .column:first-child,
   .columns:first-child {
-    margin-left: 0;
-  }
+    margin-left: 0; }
 
-  /* line 22, sass/modules/_grid.scss */
   .one.column,
   .one.columns {
-    width: 4.66666666667%;
-  }
+    width: 4.66666666667%; }
 
-  /* line 24, sass/modules/_grid.scss */
   .two.columns {
-    width: 13.3333333333%;
-  }
+    width: 13.3333333333%; }
 
-  /* line 25, sass/modules/_grid.scss */
   .three.columns {
-    width: 22%;
-  }
+    width: 22%; }
 
-  /* line 26, sass/modules/_grid.scss */
   .four.columns {
-    width: 30.6666666667%;
-  }
+    width: 30.6666666667%; }
 
-  /* line 27, sass/modules/_grid.scss */
   .five.columns {
-    width: 39.3333333333%;
-  }
+    width: 39.3333333333%; }
 
-  /* line 28, sass/modules/_grid.scss */
   .six.columns {
-    width: 48%;
-  }
+    width: 48%; }
 
-  /* line 29, sass/modules/_grid.scss */
   .seven.columns {
-    width: 56.6666666667%;
-  }
+    width: 56.6666666667%; }
 
-  /* line 30, sass/modules/_grid.scss */
   .eight.columns {
-    width: 65.3333333333%;
-  }
+    width: 65.3333333333%; }
 
-  /* line 31, sass/modules/_grid.scss */
   .nine.columns {
-    width: 74.0%;
-  }
+    width: 74.0%; }
 
-  /* line 32, sass/modules/_grid.scss */
   .ten.columns {
-    width: 82.6666666667%;
-  }
+    width: 82.6666666667%; }
 
-  /* line 33, sass/modules/_grid.scss */
   .eleven.columns {
-    width: 91.3333333333%;
-  }
+    width: 91.3333333333%; }
 
-  /* line 34, sass/modules/_grid.scss */
   .twelve.columns {
     width: 100%;
-    margin-left: 0;
-  }
+    margin-left: 0; }
 
-  /* line 36, sass/modules/_grid.scss */
   .one-third.column {
-    width: 30.6666666667%;
-  }
+    width: 30.6666666667%; }
 
-  /* line 37, sass/modules/_grid.scss */
   .two-thirds.column {
-    width: 65.3333333333%;
-  }
+    width: 65.3333333333%; }
 
-  /* line 39, sass/modules/_grid.scss */
   .one-half.column {
-    width: 48%;
-  }
+    width: 48%; }
 
   /* Offsets */
-  /* line 42, sass/modules/_grid.scss */
   .offset-by-one.column,
   .offset-by-one.columns {
-    margin-left: 8.66666666667%;
-  }
+    margin-left: 8.66666666667%; }
 
-  /* line 44, sass/modules/_grid.scss */
   .offset-by-two.column,
   .offset-by-two.columns {
-    margin-left: 17.3333333333%;
-  }
+    margin-left: 17.3333333333%; }
 
-  /* line 46, sass/modules/_grid.scss */
   .offset-by-three.column,
   .offset-by-three.columns {
-    margin-left: 26%;
-  }
+    margin-left: 26%; }
 
-  /* line 48, sass/modules/_grid.scss */
   .offset-by-four.column,
   .offset-by-four.columns {
-    margin-left: 34.6666666667%;
-  }
+    margin-left: 34.6666666667%; }
 
-  /* line 50, sass/modules/_grid.scss */
   .offset-by-five.column,
   .offset-by-five.columns {
-    margin-left: 43.3333333333%;
-  }
+    margin-left: 43.3333333333%; }
 
-  /* line 52, sass/modules/_grid.scss */
   .offset-by-six.column,
   .offset-by-six.columns {
-    margin-left: 52%;
-  }
+    margin-left: 52%; }
 
-  /* line 54, sass/modules/_grid.scss */
   .offset-by-seven.column,
   .offset-by-seven.columns {
-    margin-left: 60.6666666667%;
-  }
+    margin-left: 60.6666666667%; }
 
-  /* line 56, sass/modules/_grid.scss */
   .offset-by-eight.column,
   .offset-by-eight.columns {
-    margin-left: 69.3333333333%;
-  }
+    margin-left: 69.3333333333%; }
 
-  /* line 58, sass/modules/_grid.scss */
   .offset-by-nine.column,
   .offset-by-nine.columns {
-    margin-left: 78.0%;
-  }
+    margin-left: 78.0%; }
 
-  /* line 60, sass/modules/_grid.scss */
   .offset-by-ten.column,
   .offset-by-ten.columns {
-    margin-left: 86.6666666667%;
-  }
+    margin-left: 86.6666666667%; }
 
-  /* line 62, sass/modules/_grid.scss */
   .offset-by-eleven.column,
   .offset-by-eleven.columns {
-    margin-left: 95.3333333333%;
-  }
+    margin-left: 95.3333333333%; }
 
-  /* line 65, sass/modules/_grid.scss */
   .offset-by-one-third.column,
   .offset-by-one-third.columns {
-    margin-left: 34.6666666667%;
-  }
+    margin-left: 34.6666666667%; }
 
-  /* line 67, sass/modules/_grid.scss */
   .offset-by-two-thirds.column,
   .offset-by-two-thirds.columns {
-    margin-left: 69.3333333333%;
-  }
+    margin-left: 69.3333333333%; }
 
-  /* line 70, sass/modules/_grid.scss */
   .offset-by-one-half.column,
   .offset-by-one-half.columns {
-    margin-left: 52%;
-  }
-}
+    margin-left: 52%; } }
 /* Clearing
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /* Self Clearing Goodness */
-/* line 79, sass/modules/_grid.scss */
 .container:after,
 .row:after,
 .u-cf {
   content: "";
   display: table;
-  clear: both;
-}
+  clear: both; }
 
+/*	bounce	*/
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0); }
+
+  40% {
+    -webkit-transform: translateY(-15px); }
+
+  60% {
+    -webkit-transform: translateY(-5px); } }
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0); }
+
+  40% {
+    -moz-transform: translateY(-15px); }
+
+  60% {
+    -moz-transform: translateY(-5px); } }
+@-o-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -o-transform: translateY(0); }
+
+  40% {
+    -o-transform: translateY(-15px); }
+
+  60% {
+    -o-transform: translateY(-5px); } }
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0); }
+
+  40% {
+    transform: translateY(-15px); }
+
+  60% {
+    transform: translateY(-5px); } }
 /*-------------------------------------------------------------------------------------------
-Vars
+Misc Helpers
 --------------------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------------------
-Basic
---------------------------------------------------------------------------------------------*/
-/* line 36, sass/style.scss */
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
-  box-sizing: inherit;
-}
+.left {
+  float: left !important; }
 
-/* line 39, sass/style.scss */
-html {
-  box-sizing: border-box;
-}
+.right {
+  float: right !important; }
 
-/* line 40, sass/style.scss */
-body {
-  background: #fff;
-  cursor: auto;
-  margin: 0;
-  padding: 0;
-  position: relative;
-}
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table; }
 
-/* line 41, sass/style.scss */
-html,
-body {
-  height: 100%;
-  font-size: 100%;
-}
+.clearfix:after {
+  clear: both; }
 
-/*-------------------------------------------------------------------------------------------
-Fonts
---------------------------------------------------------------------------------------------*/
-/* line 49, sass/style.scss */
-body {
-  font: normal 1em/1.6em 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #222222;
-}
+.hide {
+  display: none; }
 
-/* line 51, sass/style.scss */
-h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
-  margin-bottom: 2rem;
-  font-weight: 300;
-}
+.invisible {
+  visibility: hidden; }
 
-/* line 51, sass/style.scss */
-h1 {
-  font-size: 4.0rem;
-  line-height: 1.2;
-  letter-spacing: -.1rem;
-}
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
-/* line 53, sass/style.scss */
-h1 {
-  font: 700 5em/1.5em 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  letter-spacing: -.1em;
-}
-
-/* line 54, sass/style.scss */
-h2 {
-  font: 400 4em/1.5em;
-  letter-spacing: -.1em;
-}
-
-/* line 55, sass/style.scss */
-h3 {
-  font: 400 3em/1.5em;
-  text-transform: uppercase;
-  letter-spacing: -.1em;
-}
-
-/* line 57, sass/style.scss */
-p {
-  margin-top: 0;
-}
-
-/*-------------------------------------------------------------------------------------------
-Links
---------------------------------------------------------------------------------------------*/
-/* line 62, sass/style.scss */
-a {
-  text-decoration: none;
-}
-
-/* line 63, sass/style.scss */
-a:hover {
-  cursor: pointer;
-}
-
-/*-------------------------------------------------------------------------------------------
-Img
---------------------------------------------------------------------------------------------*/
-/* line 67, sass/style.scss */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* line 68, sass/style.scss */
-img {
-  -ms-interpolation-mode: bicubic;
-}
-
-/* line 69, sass/style.scss */
-img {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-/*-------------------------------------------------------------------------------------------
-
---------------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------------------------------------
 Google Maps
 --------------------------------------------------------------------------------------------*/
-/* line 79, sass/style.scss */
 #map_canvas img,
 #map_canvas embed,
 #map_canvas object,
@@ -809,72 +597,1604 @@ Google Maps
 .mqa-display img,
 .mqa-display embed,
 .mqa-display object {
-  max-width: none !important;
-}
+  max-width: none !important; }
 
-/*-------------------------------------------------------------------------------------------
-Misc Helpers
---------------------------------------------------------------------------------------------*/
-/* line 91, sass/style.scss */
-.left {
-  float: left !important;
-}
-
-/* line 92, sass/style.scss */
-.right {
-  float: right !important;
-}
-
-/* line 93, sass/style.scss */
-.clearfix:before, .clearfix:after {
-  content: " ";
-  display: table;
-}
-
-/* line 94, sass/style.scss */
-.clearfix:after {
-  clear: both;
-}
-
-/* line 95, sass/style.scss */
-.hide {
-  display: none;
-}
-
-/* line 96, sass/style.scss */
-.invisible {
-  visibility: hidden;
-}
-
-/* line 97, sass/style.scss */
-.antialiased {
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon/icomoon.eot?k7lzzp");
+  src: url("../fonts/icomoon/icomoon.eot?#iefixk7lzzp") format("embedded-opentype"), url("../fonts/icomoon/icomoon.ttf?k7lzzp") format("truetype"), url("../fonts/icomoon/icomoon.woff?k7lzzp") format("woff"), url("../fonts/icomoon/icomoon.svg?k7lzzp#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-home:before {
+  content: "\e600"; }
+
+.icon-home2:before {
+  content: "\e601"; }
+
+.icon-home3:before {
+  content: "\e602"; }
+
+.icon-office:before {
+  content: "\e603"; }
+
+.icon-newspaper:before {
+  content: "\e604"; }
+
+.icon-pencil:before {
+  content: "\e605"; }
+
+.icon-pencil2:before {
+  content: "\e606"; }
+
+.icon-quill:before {
+  content: "\e607"; }
+
+.icon-pen:before {
+  content: "\e608"; }
+
+.icon-blog:before {
+  content: "\e609"; }
+
+.icon-eyedropper:before {
+  content: "\e60a"; }
+
+.icon-droplet:before {
+  content: "\e60b"; }
+
+.icon-paint-format:before {
+  content: "\e60c"; }
+
+.icon-image:before {
+  content: "\e60d"; }
+
+.icon-images:before {
+  content: "\e60e"; }
+
+.icon-camera:before {
+  content: "\e60f"; }
+
+.icon-headphones:before {
+  content: "\e610"; }
+
+.icon-music:before {
+  content: "\e611"; }
+
+.icon-play:before {
+  content: "\e612"; }
+
+.icon-film:before {
+  content: "\e613"; }
+
+.icon-video-camera:before {
+  content: "\e614"; }
+
+.icon-dice:before {
+  content: "\e615"; }
+
+.icon-pacman:before {
+  content: "\e616"; }
+
+.icon-spades:before {
+  content: "\e617"; }
+
+.icon-clubs:before {
+  content: "\e618"; }
+
+.icon-diamonds:before {
+  content: "\e619"; }
+
+.icon-bullhorn:before {
+  content: "\e61a"; }
+
+.icon-connection:before {
+  content: "\e61b"; }
+
+.icon-podcast:before {
+  content: "\e61c"; }
+
+.icon-feed:before {
+  content: "\e61d"; }
+
+.icon-mic:before {
+  content: "\e61e"; }
+
+.icon-book:before {
+  content: "\e61f"; }
+
+.icon-books:before {
+  content: "\e620"; }
+
+.icon-library:before {
+  content: "\e621"; }
+
+.icon-file-text:before {
+  content: "\e622"; }
+
+.icon-profile:before {
+  content: "\e623"; }
+
+.icon-file-empty:before {
+  content: "\e624"; }
+
+.icon-files-empty:before {
+  content: "\e625"; }
+
+.icon-file-text2:before {
+  content: "\e626"; }
+
+.icon-file-picture:before {
+  content: "\e627"; }
+
+.icon-file-music:before {
+  content: "\e628"; }
+
+.icon-file-play:before {
+  content: "\e629"; }
+
+.icon-file-video:before {
+  content: "\e62a"; }
+
+.icon-file-zip:before {
+  content: "\e62b"; }
+
+.icon-copy:before {
+  content: "\e62c"; }
+
+.icon-paste:before {
+  content: "\e62d"; }
+
+.icon-stack:before {
+  content: "\e62e"; }
+
+.icon-folder:before {
+  content: "\e62f"; }
+
+.icon-folder-open:before {
+  content: "\e630"; }
+
+.icon-folder-plus:before {
+  content: "\e631"; }
+
+.icon-folder-minus:before {
+  content: "\e632"; }
+
+.icon-folder-download:before {
+  content: "\e633"; }
+
+.icon-folder-upload:before {
+  content: "\e634"; }
+
+.icon-price-tag:before {
+  content: "\e635"; }
+
+.icon-price-tags:before {
+  content: "\e636"; }
+
+.icon-barcode:before {
+  content: "\e637"; }
+
+.icon-qrcode:before {
+  content: "\e638"; }
+
+.icon-ticket:before {
+  content: "\e639"; }
+
+.icon-cart:before {
+  content: "\e63a"; }
+
+.icon-coin-dollar:before {
+  content: "\e63b"; }
+
+.icon-coin-euro:before {
+  content: "\e63c"; }
+
+.icon-coin-pound:before {
+  content: "\e63d"; }
+
+.icon-coin-yen:before {
+  content: "\e63e"; }
+
+.icon-credit-card:before {
+  content: "\e63f"; }
+
+.icon-calculator:before {
+  content: "\e640"; }
+
+.icon-lifebuoy:before {
+  content: "\e641"; }
+
+.icon-phone:before {
+  content: "\e642"; }
+
+.icon-phone-hang-up:before {
+  content: "\e643"; }
+
+.icon-address-book:before {
+  content: "\e644"; }
+
+.icon-envelop:before {
+  content: "\e645"; }
+
+.icon-pushpin:before {
+  content: "\e646"; }
+
+.icon-location:before {
+  content: "\e647"; }
+
+.icon-location2:before {
+  content: "\e648"; }
+
+.icon-compass:before {
+  content: "\e649"; }
+
+.icon-compass2:before {
+  content: "\e64a"; }
+
+.icon-map:before {
+  content: "\e64b"; }
+
+.icon-map2:before {
+  content: "\e64c"; }
+
+.icon-history:before {
+  content: "\e64d"; }
+
+.icon-clock:before {
+  content: "\e64e"; }
+
+.icon-clock2:before {
+  content: "\e64f"; }
+
+.icon-alarm:before {
+  content: "\e650"; }
+
+.icon-bell:before {
+  content: "\e651"; }
+
+.icon-stopwatch:before {
+  content: "\e652"; }
+
+.icon-calendar:before {
+  content: "\e653"; }
+
+.icon-printer:before {
+  content: "\e654"; }
+
+.icon-keyboard:before {
+  content: "\e655"; }
+
+.icon-display:before {
+  content: "\e656"; }
+
+.icon-laptop:before {
+  content: "\e657"; }
+
+.icon-mobile:before {
+  content: "\e658"; }
+
+.icon-mobile2:before {
+  content: "\e659"; }
+
+.icon-tablet:before {
+  content: "\e65a"; }
+
+.icon-tv:before {
+  content: "\e65b"; }
+
+.icon-drawer:before {
+  content: "\e65c"; }
+
+.icon-drawer2:before {
+  content: "\e65d"; }
+
+.icon-box-add:before {
+  content: "\e65e"; }
+
+.icon-box-remove:before {
+  content: "\e65f"; }
+
+.icon-download:before {
+  content: "\e660"; }
+
+.icon-upload:before {
+  content: "\e661"; }
+
+.icon-floppy-disk:before {
+  content: "\e662"; }
+
+.icon-drive:before {
+  content: "\e663"; }
+
+.icon-database:before {
+  content: "\e664"; }
+
+.icon-undo:before {
+  content: "\e665"; }
+
+.icon-redo:before {
+  content: "\e666"; }
+
+.icon-undo2:before {
+  content: "\e667"; }
+
+.icon-redo2:before {
+  content: "\e668"; }
+
+.icon-forward:before {
+  content: "\e669"; }
+
+.icon-reply:before {
+  content: "\e66a"; }
+
+.icon-bubble:before {
+  content: "\e66b"; }
+
+.icon-bubbles:before {
+  content: "\e66c"; }
+
+.icon-bubbles2:before {
+  content: "\e66d"; }
+
+.icon-bubble2:before {
+  content: "\e66e"; }
+
+.icon-bubbles3:before {
+  content: "\e66f"; }
+
+.icon-bubbles4:before {
+  content: "\e670"; }
+
+.icon-user:before {
+  content: "\e671"; }
+
+.icon-users:before {
+  content: "\e672"; }
+
+.icon-user-plus:before {
+  content: "\e673"; }
+
+.icon-user-minus:before {
+  content: "\e674"; }
+
+.icon-user-check:before {
+  content: "\e675"; }
+
+.icon-user-tie:before {
+  content: "\e676"; }
+
+.icon-quotes-left:before {
+  content: "\e677"; }
+
+.icon-quotes-right:before {
+  content: "\e678"; }
+
+.icon-hour-glass:before {
+  content: "\e679"; }
+
+.icon-spinner:before {
+  content: "\e67a"; }
+
+.icon-spinner2:before {
+  content: "\e67b"; }
+
+.icon-spinner3:before {
+  content: "\e67c"; }
+
+.icon-spinner4:before {
+  content: "\e67d"; }
+
+.icon-spinner5:before {
+  content: "\e67e"; }
+
+.icon-spinner6:before {
+  content: "\e67f"; }
+
+.icon-spinner7:before {
+  content: "\e680"; }
+
+.icon-spinner8:before {
+  content: "\e681"; }
+
+.icon-spinner9:before {
+  content: "\e682"; }
+
+.icon-spinner10:before {
+  content: "\e683"; }
+
+.icon-spinner11:before {
+  content: "\e684"; }
+
+.icon-binoculars:before {
+  content: "\e685"; }
+
+.icon-search:before {
+  content: "\e686"; }
+
+.icon-zoom-in:before {
+  content: "\e687"; }
+
+.icon-zoom-out:before {
+  content: "\e688"; }
+
+.icon-enlarge:before {
+  content: "\e689"; }
+
+.icon-shrink:before {
+  content: "\e68a"; }
+
+.icon-enlarge2:before {
+  content: "\e68b"; }
+
+.icon-shrink2:before {
+  content: "\e68c"; }
+
+.icon-key:before {
+  content: "\e68d"; }
+
+.icon-key2:before {
+  content: "\e68e"; }
+
+.icon-lock:before {
+  content: "\e68f"; }
+
+.icon-unlocked:before {
+  content: "\e690"; }
+
+.icon-wrench:before {
+  content: "\e691"; }
+
+.icon-equalizer:before {
+  content: "\e692"; }
+
+.icon-equalizer2:before {
+  content: "\e693"; }
+
+.icon-cog:before {
+  content: "\e694"; }
+
+.icon-cogs:before {
+  content: "\e695"; }
+
+.icon-hammer:before {
+  content: "\e696"; }
+
+.icon-magic-wand:before {
+  content: "\e697"; }
+
+.icon-aid-kit:before {
+  content: "\e698"; }
+
+.icon-bug:before {
+  content: "\e699"; }
+
+.icon-pie-chart:before {
+  content: "\e69a"; }
+
+.icon-stats-dots:before {
+  content: "\e69b"; }
+
+.icon-stats-bars:before {
+  content: "\e69c"; }
+
+.icon-stats-bars2:before {
+  content: "\e69d"; }
+
+.icon-trophy:before {
+  content: "\e69e"; }
+
+.icon-gift:before {
+  content: "\e69f"; }
+
+.icon-glass:before {
+  content: "\e6a0"; }
+
+.icon-glass2:before {
+  content: "\e6a1"; }
+
+.icon-mug:before {
+  content: "\e6a2"; }
+
+.icon-spoon-knife:before {
+  content: "\e6a3"; }
+
+.icon-leaf:before {
+  content: "\e6a4"; }
+
+.icon-rocket:before {
+  content: "\e6a5"; }
+
+.icon-meter:before {
+  content: "\e6a6"; }
+
+.icon-meter2:before {
+  content: "\e6a7"; }
+
+.icon-hammer2:before {
+  content: "\e6a8"; }
+
+.icon-fire:before {
+  content: "\e6a9"; }
+
+.icon-lab:before {
+  content: "\e6aa"; }
+
+.icon-magnet:before {
+  content: "\e6ab"; }
+
+.icon-bin:before {
+  content: "\e6ac"; }
+
+.icon-bin2:before {
+  content: "\e6ad"; }
+
+.icon-briefcase:before {
+  content: "\e6ae"; }
+
+.icon-airplane:before {
+  content: "\e6af"; }
+
+.icon-truck:before {
+  content: "\e6b0"; }
+
+.icon-road:before {
+  content: "\e6b1"; }
+
+.icon-accessibility:before {
+  content: "\e6b2"; }
+
+.icon-target:before {
+  content: "\e6b3"; }
+
+.icon-shield:before {
+  content: "\e6b4"; }
+
+.icon-power:before {
+  content: "\e6b5"; }
+
+.icon-switch:before {
+  content: "\e6b6"; }
+
+.icon-power-cord:before {
+  content: "\e6b7"; }
+
+.icon-clipboard:before {
+  content: "\e6b8"; }
+
+.icon-list-numbered:before {
+  content: "\e6b9"; }
+
+.icon-list:before {
+  content: "\e6ba"; }
+
+.icon-list2:before {
+  content: "\e6bb"; }
+
+.icon-tree:before {
+  content: "\e6bc"; }
+
+.icon-menu:before {
+  content: "\e6bd"; }
+
+.icon-menu2:before {
+  content: "\e6be"; }
+
+.icon-menu3:before {
+  content: "\e6bf"; }
+
+.icon-menu4:before {
+  content: "\e6c0"; }
+
+.icon-cloud:before {
+  content: "\e6c1"; }
+
+.icon-cloud-download:before {
+  content: "\e6c2"; }
+
+.icon-cloud-upload:before {
+  content: "\e6c3"; }
+
+.icon-cloud-check:before {
+  content: "\e6c4"; }
+
+.icon-download2:before {
+  content: "\e6c5"; }
+
+.icon-upload2:before {
+  content: "\e6c6"; }
+
+.icon-download3:before {
+  content: "\e6c7"; }
+
+.icon-upload3:before {
+  content: "\e6c8"; }
+
+.icon-sphere:before {
+  content: "\e6c9"; }
+
+.icon-earth:before {
+  content: "\e6ca"; }
+
+.icon-link:before {
+  content: "\e6cb"; }
+
+.icon-flag:before {
+  content: "\e6cc"; }
+
+.icon-attachment:before {
+  content: "\e6cd"; }
+
+.icon-eye:before {
+  content: "\e6ce"; }
+
+.icon-eye-plus:before {
+  content: "\e6cf"; }
+
+.icon-eye-minus:before {
+  content: "\e6d0"; }
+
+.icon-eye-blocked:before {
+  content: "\e6d1"; }
+
+.icon-bookmark:before {
+  content: "\e6d2"; }
+
+.icon-bookmarks:before {
+  content: "\e6d3"; }
+
+.icon-sun:before {
+  content: "\e6d4"; }
+
+.icon-contrast:before {
+  content: "\e6d5"; }
+
+.icon-brightness-contrast:before {
+  content: "\e6d6"; }
+
+.icon-star-empty:before {
+  content: "\e6d7"; }
+
+.icon-star-half:before {
+  content: "\e6d8"; }
+
+.icon-star-full:before {
+  content: "\e6d9"; }
+
+.icon-heart:before {
+  content: "\e6da"; }
+
+.icon-heart-broken:before {
+  content: "\e6db"; }
+
+.icon-man:before {
+  content: "\e6dc"; }
+
+.icon-woman:before {
+  content: "\e6dd"; }
+
+.icon-man-woman:before {
+  content: "\e6de"; }
+
+.icon-happy:before {
+  content: "\e6df"; }
+
+.icon-happy2:before {
+  content: "\e6e0"; }
+
+.icon-smile:before {
+  content: "\e6e1"; }
+
+.icon-smile2:before {
+  content: "\e6e2"; }
+
+.icon-tongue:before {
+  content: "\e6e3"; }
+
+.icon-tongue2:before {
+  content: "\e6e4"; }
+
+.icon-sad:before {
+  content: "\e6e5"; }
+
+.icon-sad2:before {
+  content: "\e6e6"; }
+
+.icon-wink:before {
+  content: "\e6e7"; }
+
+.icon-wink2:before {
+  content: "\e6e8"; }
+
+.icon-grin:before {
+  content: "\e6e9"; }
+
+.icon-grin2:before {
+  content: "\e6ea"; }
+
+.icon-cool:before {
+  content: "\e6eb"; }
+
+.icon-cool2:before {
+  content: "\e6ec"; }
+
+.icon-angry:before {
+  content: "\e6ed"; }
+
+.icon-angry2:before {
+  content: "\e6ee"; }
+
+.icon-evil:before {
+  content: "\e6ef"; }
+
+.icon-evil2:before {
+  content: "\e6f0"; }
+
+.icon-shocked:before {
+  content: "\e6f1"; }
+
+.icon-shocked2:before {
+  content: "\e6f2"; }
+
+.icon-baffled:before {
+  content: "\e6f3"; }
+
+.icon-baffled2:before {
+  content: "\e6f4"; }
+
+.icon-confused:before {
+  content: "\e6f5"; }
+
+.icon-confused2:before {
+  content: "\e6f6"; }
+
+.icon-neutral:before {
+  content: "\e6f7"; }
+
+.icon-neutral2:before {
+  content: "\e6f8"; }
+
+.icon-hipster:before {
+  content: "\e6f9"; }
+
+.icon-hipster2:before {
+  content: "\e6fa"; }
+
+.icon-wondering:before {
+  content: "\e6fb"; }
+
+.icon-wondering2:before {
+  content: "\e6fc"; }
+
+.icon-sleepy:before {
+  content: "\e6fd"; }
+
+.icon-sleepy2:before {
+  content: "\e6fe"; }
+
+.icon-frustrated:before {
+  content: "\e6ff"; }
+
+.icon-frustrated2:before {
+  content: "\e700"; }
+
+.icon-crying:before {
+  content: "\e701"; }
+
+.icon-crying2:before {
+  content: "\e702"; }
+
+.icon-point-up:before {
+  content: "\e703"; }
+
+.icon-point-right:before {
+  content: "\e704"; }
+
+.icon-point-down:before {
+  content: "\e705"; }
+
+.icon-point-left:before {
+  content: "\e706"; }
+
+.icon-warning:before {
+  content: "\e707"; }
+
+.icon-notification:before {
+  content: "\e708"; }
+
+.icon-question:before {
+  content: "\e709"; }
+
+.icon-plus:before {
+  content: "\e70a"; }
+
+.icon-minus:before {
+  content: "\e70b"; }
+
+.icon-info:before {
+  content: "\e70c"; }
+
+.icon-cancel-circle:before {
+  content: "\e70d"; }
+
+.icon-blocked:before {
+  content: "\e70e"; }
+
+.icon-cross:before {
+  content: "\e70f"; }
+
+.icon-checkmark:before {
+  content: "\e710"; }
+
+.icon-checkmark2:before {
+  content: "\e711"; }
+
+.icon-spell-check:before {
+  content: "\e712"; }
+
+.icon-enter:before {
+  content: "\e713"; }
+
+.icon-exit:before {
+  content: "\e714"; }
+
+.icon-play2:before {
+  content: "\e715"; }
+
+.icon-pause:before {
+  content: "\e716"; }
+
+.icon-stop:before {
+  content: "\e717"; }
+
+.icon-previous:before {
+  content: "\e718"; }
+
+.icon-next:before {
+  content: "\e719"; }
+
+.icon-backward:before {
+  content: "\e71a"; }
+
+.icon-forward2:before {
+  content: "\e71b"; }
+
+.icon-play3:before {
+  content: "\e71c"; }
+
+.icon-pause2:before {
+  content: "\e71d"; }
+
+.icon-stop2:before {
+  content: "\e71e"; }
+
+.icon-backward2:before {
+  content: "\e71f"; }
+
+.icon-forward3:before {
+  content: "\e720"; }
+
+.icon-first:before {
+  content: "\e721"; }
+
+.icon-last:before {
+  content: "\e722"; }
+
+.icon-previous2:before {
+  content: "\e723"; }
+
+.icon-next2:before {
+  content: "\e724"; }
+
+.icon-eject:before {
+  content: "\e725"; }
+
+.icon-volume-high:before {
+  content: "\e726"; }
+
+.icon-volume-medium:before {
+  content: "\e727"; }
+
+.icon-volume-low:before {
+  content: "\e728"; }
+
+.icon-volume-mute:before {
+  content: "\e729"; }
+
+.icon-volume-mute2:before {
+  content: "\e72a"; }
+
+.icon-volume-increase:before {
+  content: "\e72b"; }
+
+.icon-volume-decrease:before {
+  content: "\e72c"; }
+
+.icon-loop:before {
+  content: "\e72d"; }
+
+.icon-loop2:before {
+  content: "\e72e"; }
+
+.icon-infinite:before {
+  content: "\e72f"; }
+
+.icon-shuffle:before {
+  content: "\e730"; }
+
+.icon-arrow-up-left:before {
+  content: "\e731"; }
+
+.icon-arrow-up:before {
+  content: "\e732"; }
+
+.icon-arrow-up-right:before {
+  content: "\e733"; }
+
+.icon-arrow-right:before {
+  content: "\e734"; }
+
+.icon-arrow-down-right:before {
+  content: "\e735"; }
+
+.icon-arrow-down:before {
+  content: "\e736"; }
+
+.icon-arrow-down-left:before {
+  content: "\e737"; }
+
+.icon-arrow-left:before {
+  content: "\e738"; }
+
+.icon-arrow-up-left2:before {
+  content: "\e739"; }
+
+.icon-arrow-up2:before {
+  content: "\e73a"; }
+
+.icon-arrow-up-right2:before {
+  content: "\e73b"; }
+
+.icon-arrow-right2:before {
+  content: "\e73c"; }
+
+.icon-arrow-down-right2:before {
+  content: "\e73d"; }
+
+.icon-arrow-down2:before {
+  content: "\e73e"; }
+
+.icon-arrow-down-left2:before {
+  content: "\e73f"; }
+
+.icon-arrow-left2:before {
+  content: "\e740"; }
+
+.icon-circle-up:before {
+  content: "\e741"; }
+
+.icon-circle-right:before {
+  content: "\e742"; }
+
+.icon-circle-down:before {
+  content: "\e743"; }
+
+.icon-circle-left:before {
+  content: "\e744"; }
+
+.icon-tab:before {
+  content: "\e745"; }
+
+.icon-move-up:before {
+  content: "\e746"; }
+
+.icon-move-down:before {
+  content: "\e747"; }
+
+.icon-sort-alpha-asc:before {
+  content: "\e748"; }
+
+.icon-sort-alpha-desc:before {
+  content: "\e749"; }
+
+.icon-sort-numeric-asc:before {
+  content: "\e74a"; }
+
+.icon-sort-numberic-desc:before {
+  content: "\e74b"; }
+
+.icon-sort-amount-asc:before {
+  content: "\e74c"; }
+
+.icon-sort-amount-desc:before {
+  content: "\e74d"; }
+
+.icon-command:before {
+  content: "\e74e"; }
+
+.icon-shift:before {
+  content: "\e74f"; }
+
+.icon-ctrl:before {
+  content: "\e750"; }
+
+.icon-opt:before {
+  content: "\e751"; }
+
+.icon-checkbox-checked:before {
+  content: "\e752"; }
+
+.icon-checkbox-unchecked:before {
+  content: "\e753"; }
+
+.icon-radio-checked:before {
+  content: "\e754"; }
+
+.icon-radio-checked2:before {
+  content: "\e755"; }
+
+.icon-radio-unchecked:before {
+  content: "\e756"; }
+
+.icon-crop:before {
+  content: "\e757"; }
+
+.icon-make-group:before {
+  content: "\e758"; }
+
+.icon-ungroup:before {
+  content: "\e759"; }
+
+.icon-scissors:before {
+  content: "\e75a"; }
+
+.icon-filter:before {
+  content: "\e75b"; }
+
+.icon-font:before {
+  content: "\e75c"; }
+
+.icon-ligature:before {
+  content: "\e75d"; }
+
+.icon-ligature2:before {
+  content: "\e75e"; }
+
+.icon-text-height:before {
+  content: "\e75f"; }
+
+.icon-text-width:before {
+  content: "\e760"; }
+
+.icon-font-size:before {
+  content: "\e761"; }
+
+.icon-bold:before {
+  content: "\e762"; }
+
+.icon-underline:before {
+  content: "\e763"; }
+
+.icon-italic:before {
+  content: "\e764"; }
+
+.icon-strikethrough:before {
+  content: "\e765"; }
+
+.icon-omega:before {
+  content: "\e766"; }
+
+.icon-sigma:before {
+  content: "\e767"; }
+
+.icon-page-break:before {
+  content: "\e768"; }
+
+.icon-superscript:before {
+  content: "\e769"; }
+
+.icon-subscript:before {
+  content: "\e76a"; }
+
+.icon-superscript2:before {
+  content: "\e76b"; }
+
+.icon-subscript2:before {
+  content: "\e76c"; }
+
+.icon-text-color:before {
+  content: "\e76d"; }
+
+.icon-pagebreak:before {
+  content: "\e76e"; }
+
+.icon-clear-formatting:before {
+  content: "\e76f"; }
+
+.icon-table:before {
+  content: "\e770"; }
+
+.icon-table2:before {
+  content: "\e771"; }
+
+.icon-insert-template:before {
+  content: "\e772"; }
+
+.icon-pilcrow:before {
+  content: "\e773"; }
+
+.icon-ltr:before {
+  content: "\e774"; }
+
+.icon-rtl:before {
+  content: "\e775"; }
+
+.icon-section:before {
+  content: "\e776"; }
+
+.icon-paragraph-left:before {
+  content: "\e777"; }
+
+.icon-paragraph-center:before {
+  content: "\e778"; }
+
+.icon-paragraph-right:before {
+  content: "\e779"; }
+
+.icon-paragraph-justify:before {
+  content: "\e77a"; }
+
+.icon-indent-increase:before {
+  content: "\e77b"; }
+
+.icon-indent-decrease:before {
+  content: "\e77c"; }
+
+.icon-share:before {
+  content: "\e77d"; }
+
+.icon-new-tab:before {
+  content: "\e77e"; }
+
+.icon-embed:before {
+  content: "\e77f"; }
+
+.icon-embed2:before {
+  content: "\e780"; }
+
+.icon-terminal:before {
+  content: "\e781"; }
+
+.icon-share2:before {
+  content: "\e782"; }
+
+.icon-mail:before {
+  content: "\e783"; }
+
+.icon-mail2:before {
+  content: "\e784"; }
+
+.icon-mail3:before {
+  content: "\e785"; }
+
+.icon-mail4:before {
+  content: "\e786"; }
+
+.icon-google:before {
+  content: "\e787"; }
+
+.icon-google-plus:before {
+  content: "\e788"; }
+
+.icon-google-plus2:before {
+  content: "\e789"; }
+
+.icon-google-plus3:before {
+  content: "\e78a"; }
+
+.icon-google-drive:before {
+  content: "\e78b"; }
+
+.icon-facebook:before {
+  content: "\e78c"; }
+
+.icon-facebook2:before {
+  content: "\e78d"; }
+
+.icon-facebook3:before {
+  content: "\e78e"; }
+
+.icon-ello:before {
+  content: "\e78f"; }
+
+.icon-instagram:before {
+  content: "\e790"; }
+
+.icon-twitter:before {
+  content: "\e791"; }
+
+.icon-twitter2:before {
+  content: "\e792"; }
+
+.icon-twitter3:before {
+  content: "\e793"; }
+
+.icon-feed2:before {
+  content: "\e794"; }
+
+.icon-feed3:before {
+  content: "\e795"; }
+
+.icon-feed4:before {
+  content: "\e796"; }
+
+.icon-youtube:before {
+  content: "\e797"; }
+
+.icon-youtube2:before {
+  content: "\e798"; }
+
+.icon-youtube3:before {
+  content: "\e799"; }
+
+.icon-youtube4:before {
+  content: "\e79a"; }
+
+.icon-twitch:before {
+  content: "\e79b"; }
+
+.icon-vimeo:before {
+  content: "\e79c"; }
+
+.icon-vimeo2:before {
+  content: "\e79d"; }
+
+.icon-vimeo3:before {
+  content: "\e79e"; }
+
+.icon-lanyrd:before {
+  content: "\e79f"; }
+
+.icon-flickr:before {
+  content: "\e7a0"; }
+
+.icon-flickr2:before {
+  content: "\e7a1"; }
+
+.icon-flickr3:before {
+  content: "\e7a2"; }
+
+.icon-flickr4:before {
+  content: "\e7a3"; }
+
+.icon-picassa:before {
+  content: "\e7a4"; }
+
+.icon-picassa2:before {
+  content: "\e7a5"; }
+
+.icon-dribbble:before {
+  content: "\e7a6"; }
+
+.icon-dribbble2:before {
+  content: "\e7a7"; }
+
+.icon-dribbble3:before {
+  content: "\e7a8"; }
+
+.icon-forrst:before {
+  content: "\e7a9"; }
+
+.icon-forrst2:before {
+  content: "\e7aa"; }
+
+.icon-deviantart:before {
+  content: "\e7ab"; }
+
+.icon-deviantart2:before {
+  content: "\e7ac"; }
+
+.icon-steam:before {
+  content: "\e7ad"; }
+
+.icon-steam2:before {
+  content: "\e7ae"; }
+
+.icon-dropbox:before {
+  content: "\e7af"; }
+
+.icon-onedrive:before {
+  content: "\e7b0"; }
+
+.icon-github:before {
+  content: "\e7b1"; }
+
+.icon-github2:before {
+  content: "\e7b2"; }
+
+.icon-github3:before {
+  content: "\e7b3"; }
+
+.icon-github4:before {
+  content: "\e7b4"; }
+
+.icon-github5:before {
+  content: "\e7b5"; }
+
+.icon-wordpress:before {
+  content: "\e7b6"; }
+
+.icon-wordpress2:before {
+  content: "\e7b7"; }
+
+.icon-joomla:before {
+  content: "\e7b8"; }
+
+.icon-blogger:before {
+  content: "\e7b9"; }
+
+.icon-blogger2:before {
+  content: "\e7ba"; }
+
+.icon-tumblr:before {
+  content: "\e7bb"; }
+
+.icon-tumblr2:before {
+  content: "\e7bc"; }
+
+.icon-yahoo:before {
+  content: "\e7bd"; }
+
+.icon-tux:before {
+  content: "\e7be"; }
+
+.icon-apple:before {
+  content: "\e7bf"; }
+
+.icon-finder:before {
+  content: "\e7c0"; }
+
+.icon-android:before {
+  content: "\e7c1"; }
+
+.icon-windows:before {
+  content: "\e7c2"; }
+
+.icon-windows8:before {
+  content: "\e7c3"; }
+
+.icon-soundcloud:before {
+  content: "\e7c4"; }
+
+.icon-soundcloud2:before {
+  content: "\e7c5"; }
+
+.icon-skype:before {
+  content: "\e7c6"; }
+
+.icon-reddit:before {
+  content: "\e7c7"; }
+
+.icon-linkedin:before {
+  content: "\e7c8"; }
+
+.icon-linkedin2:before {
+  content: "\e7c9"; }
+
+.icon-lastfm:before {
+  content: "\e7ca"; }
+
+.icon-lastfm2:before {
+  content: "\e7cb"; }
+
+.icon-delicious:before {
+  content: "\e7cc"; }
+
+.icon-stumbleupon:before {
+  content: "\e7cd"; }
+
+.icon-stumbleupon2:before {
+  content: "\e7ce"; }
+
+.icon-stackoverflow:before {
+  content: "\e7cf"; }
+
+.icon-pinterest:before {
+  content: "\e7d0"; }
+
+.icon-pinterest2:before {
+  content: "\e7d1"; }
+
+.icon-xing:before {
+  content: "\e7d2"; }
+
+.icon-xing2:before {
+  content: "\e7d3"; }
+
+.icon-flattr:before {
+  content: "\e7d4"; }
+
+.icon-foursquare:before {
+  content: "\e7d5"; }
+
+.icon-paypal:before {
+  content: "\e7d6"; }
+
+.icon-paypal2:before {
+  content: "\e7d7"; }
+
+.icon-paypal3:before {
+  content: "\e7d8"; }
+
+.icon-yelp:before {
+  content: "\e7d9"; }
+
+.icon-file-pdf:before {
+  content: "\e7da"; }
+
+.icon-file-openoffice:before {
+  content: "\e7db"; }
+
+.icon-file-word:before {
+  content: "\e7dc"; }
+
+.icon-file-excel:before {
+  content: "\e7dd"; }
+
+.icon-libreoffice:before {
+  content: "\e7de"; }
+
+.icon-html5:before {
+  content: "\e7df"; }
+
+.icon-html52:before {
+  content: "\e7e0"; }
+
+.icon-css3:before {
+  content: "\e7e1"; }
+
+.icon-git:before {
+  content: "\e7e2"; }
+
+.icon-svg:before {
+  content: "\e7e3"; }
+
+.icon-codepen:before {
+  content: "\e7e4"; }
+
+.icon-chrome:before {
+  content: "\e7e5"; }
+
+.icon-firefox:before {
+  content: "\e7e6"; }
+
+.icon-IE:before {
+  content: "\e7e7"; }
+
+.icon-opera:before {
+  content: "\e7e8"; }
+
+.icon-safari:before {
+  content: "\e7e9"; }
+
+.icon-IcoMoon:before {
+  content: "\e7ea"; }
+
+.icon-logo:before {
+  content: "\e7eb"; }
 
 /*-------------------------------------------------------------------------------------------
-Form
+import
 --------------------------------------------------------------------------------------------*/
-/* line 101, sass/style.scss */
-textarea {
-  height: auto;
-  min-height: 50px;
-}
+/*-------------------------------------------------------------------------------------------
+Vars
+--------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------
+Basic
+--------------------------------------------------------------------------------------------*/
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit; }
 
-/* line 102, sass/style.scss */
-select {
-  width: 100%;
-}
+html {
+  box-sizing: border-box; }
+
+body {
+  background: #fff;
+  cursor: auto;
+  margin: 0;
+  padding: 0;
+  position: relative; }
+
+html,
+body {
+  height: 100%;
+  font-size: 100%; }
+
+/*-------------------------------------------------------------------------------------------
+Fonts
+--------------------------------------------------------------------------------------------*/
+body {
+  font: normal 1em/1.6em "Open Sans", Arial, sans-serif;
+  color: #222222; }
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-top: 0;
+  margin-bottom: .3em; }
+
+h1 {
+  font: 700 5em/1.5em "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: -.1em;
+  text-transform: lowercase; }
+
+h2 {
+  font: 700 4em/1.5em "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: -.05em;
+  text-transform: lowercase;
+  color: #9eae8a; }
+
+h3 {
+  font: 400 3em/1.5em "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -.1em; }
+
+/*-------------------------------------------------------------------------------------------
+Links
+--------------------------------------------------------------------------------------------*/
+a {
+  color: #f35f55;
+  text-decoration: none; }
+
+a:hover {
+  color: #9eae8a;
+  cursor: pointer; }
+
+/*-------------------------------------------------------------------------------------------
+Img
+--------------------------------------------------------------------------------------------*/
+img {
+  max-width: 100%;
+  height: auto; }
+
+img {
+  -ms-interpolation-mode: bicubic; }
+
+img {
+  display: inline-block;
+  vertical-align: middle; }
+
+img.no-adaptive {
+  width: auto; }
+
+figure.circle {
+  margin: 0;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 300px;
+  border: 5px solid white; }
 
 /*-------------------------------------------------------------------------------------------
 Layout
 --------------------------------------------------------------------------------------------*/
-/* line 106, sass/style.scss */
 body.noScroll {
-  overflow: hidden;
-}
+  overflow: hidden; }
 
-/* line 108, sass/style.scss */
 #mainNavWrapper {
   position: fixed;
   top: 0;
@@ -886,279 +2206,177 @@ body.noScroll {
   background: white;
   display: none;
   opacity: 0;
-  min-height: 100%;
-}
-/* line 110, sass/style.scss */
-#mainNavWrapper.open {
-  display: block;
-  opacity: 1;
-}
-/* line 112, sass/style.scss */
-#mainNavWrapper #mainNav {
-  list-style-type: none;
-}
-/* line 114, sass/style.scss */
-#mainNavWrapper #mainNav li a {
-  font-weight: 300;
-  text-transform: uppercase;
-  display: block;
-  text-align: center;
-}
+  min-height: 100%; }
+  #mainNavWrapper.open {
+    display: block;
+    opacity: 1; }
+  #mainNavWrapper #mainNav {
+    list-style-type: none; }
+    #mainNavWrapper #mainNav li a {
+      font-weight: 300;
+      text-transform: uppercase;
+      display: block;
+      text-align: center; }
 
-/* line 120, sass/style.scss */
 header {
   z-index: 3;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 1;
   width: 100%;
   height: 100px;
-  background: white;
-  opacity: .9;
-  height: 75px;
-}
-/* line 122, sass/style.scss */
-header #logo {
-  float: left;
-  line-height: 75px;
-  font-size: 25px;
-  font-weight: 700;
-  padding: 0 0 0 25px;
-}
-/* line 124, sass/style.scss */
-header a.hamburger {
-  border-left: 1px solid #444;
-  line-height: 75px;
-  float: right;
-  cursor: pointer;
-  padding: 0px 0px 0px 0px;
-  height: 75px;
-  width: 75px;
-  position: relative;
-  text-align: center;
-  display: block;
-}
-/* line 126, sass/style.scss */
-header a.hamburger span,
-header a.hamburger span:before,
-header a.hamburger span:after {
-  left: 25px;
-  cursor: pointer;
-  border-radius: 1px;
-  height: 5px;
-  width: 25px;
-  background: black;
-  position: absolute;
-  display: block;
-  content: '';
-  transition: all 100ms ease-in-out;
-  -webkit-transition: all 100ms ease-in-out;
-}
-/* line 130, sass/style.scss */
-header a.hamburger span {
-  top: 35px;
-}
-/* line 132, sass/style.scss */
-header a.hamburger span:before {
-  top: -10px;
-  left: 0;
-}
-/* line 134, sass/style.scss */
-header a.hamburger span:after {
-  bottom: -10px;
-  left: 0;
-}
-/* line 138, sass/style.scss */
-header a.hamburger.active span {
-  background-color: transparent;
-}
-/* line 140, sass/style.scss */
-header a.hamburger.active span:before {
-  top: 0;
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  background-color: black !important;
-}
-/* line 142, sass/style.scss */
-header a.hamburger.active span:after {
-  top: 0;
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  background-color: black !important;
-}
+  height: 75px; }
+  header.fixme {
+    position: fixed;
+    background: #cdbb93; }
+  header #logo {
+    float: left;
+    line-height: 75px;
+    font-size: 25px;
+    font-weight: 700;
+    padding: 0 0 0 25px;
+    color: white;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /*&:after { content: "\e7eb"; font-family: 'icomoon'; }*/ }
+  header a.hamburger {
+    line-height: 75px;
+    float: right;
+    cursor: pointer;
+    padding: 0px 0px 0px 0px;
+    height: 75px;
+    width: 75px;
+    position: relative;
+    text-align: center;
+    display: block; }
+    header a.hamburger span,
+    header a.hamburger span:before,
+    header a.hamburger span:after {
+      left: 25px;
+      cursor: pointer;
+      border-radius: 1px;
+      height: 5px;
+      width: 25px;
+      background: white;
+      position: absolute;
+      display: block;
+      content: '';
+      transition: all 100ms ease-in-out;
+      -webkit-transition: all 100ms ease-in-out; }
+    header a.hamburger span {
+      top: 35px; }
+    header a.hamburger span:before {
+      top: -10px;
+      left: 0; }
+    header a.hamburger span:after {
+      bottom: -10px;
+      left: 0; }
+    header a.hamburger.active span {
+      background-color: transparent; }
+    header a.hamburger.active span:before {
+      top: 0;
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+      background-color: black !important; }
+    header a.hamburger.active span:after {
+      top: 0;
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+      background-color: black !important; }
 
-/* line 151, sass/style.scss */
 section#hero {
   position: relative;
-  background: #123456 url(../bg2.jpg) no-repeat center center fixed;
+  background: #123456 url(../bg3.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative; }
+  section#hero .jumbotron {
+    line-height: .7em;
+    text-transform: uppercase;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+    color: white;
+    vertical-align: middle;
+    display: table;
+    vertical-align: middle;
+    position: absolute;
+    top: 40%;
+    /* &:before { display: block; content: "\e7eb"; font-family: 'icomoon'; } */ }
+    section#hero .jumbotron span {
+      display: block;
+      font: 400 0.5em/1em "Pacifico", cursive; }
+  section#hero .more {
+    position: absolute;
+    bottom: 25px;
+    left: 0px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    color: white;
+    font-size: 25px;
+    cursor: pointer; }
+    section#hero .more:after {
+      display: block;
+      font-family: "icomoon";
+      content: "\e73e"; }
+    section#hero .more.bounce.start {
+      animation: bounce 4s infinite;
+      -webkit-animation: bounce 4s infinite;
+      -moz-animation: bounce 4s infinite;
+      -o-animation: bounce 4s infinite; }
+
+.content > section {
+  padding: 75px 0;
+  /*&:after { display: block; content: ""; width: 100%; background: red; height: 2px; }*/ }
+  .content > section h2 {
+    text-shadow: 4px 3px 0px white, 9px 8px 0px #f35f55; }
+  .content > section a.more {
+    display: inline-block;
+    border: 1px solid;
+    padding: 5px 25px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    border-radius: 2px; }
+    .content > section a.more:after {
+      content: "\e704";
+      font-family: 'icomoon';
+      margin: 0 0 0 5px; }
+    .content > section a.more:hover {
+      background: #9eae8a;
+      color: white; }
+
+section#about .container .row {
+  text-align: right; }
+
+section#series {
+  background: #cdbb93 url(../bg2.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   position: relative;
-  /*position: absolute; width: 100%; height: 100vh; top: 0; left: 0; overflow: hidden; pointer-events: none; background: blue;
+  /*&:before { display: block; content: ''; position: absolute; top: 0;  height: 100px; background: red; width: 50px; }
+*/ }
 
-  > div { background: #212121 url(../bg2.jpg) no-repeat 50% 0; -webkit-backface-visibility: hidden; backface-visibility: hidden;  }
+section#portfolio {
+  background: #335650; }
+  section#portfolio .container .row {
+    text-align: right; }
 
-  > div { position: absolute; width: 100%; height: 100%; }
-  */
-}
-/* line 160, sass/style.scss */
-section#hero .claim {
-  font-size: 5em;
-  text-transform: uppercase;
-  font-weight: 700;
-  width: 100%;
-  text-align: center;
-  color: white;
-  min-height: 100%;
-  vertical-align: middle;
-  display: table;
-  line-height: 100%;
-  vertical-align: middle;
-  position: absolute;
-  top: 40%;
-}
-/* line 162, sass/style.scss */
-section#hero .bounce {
-  position: absolute;
-  bottom: 0px;
-  left: 50%;
-  width: 60px;
-  height: 60px;
-  font-weight: 700;
-  color: white;
-  font-size: 25px;
-  cursor: pointer;
-}
-/* line 164, sass/style.scss */
-section#hero .bounce.start {
-  animation: bounce 2s infinite;
-  -webkit-animation: bounce 2s infinite;
-  -moz-animation: bounce 2s infinite;
-  -o-animation: bounce 2s infinite;
-}
+/*-------------------------------------------------------------------------------------------
+/sass/partials
+--------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------
+Form
+--------------------------------------------------------------------------------------------*/
+textarea {
+  height: auto;
+  min-height: 50px; }
 
-/*
-#section--1 { background: #123456; background: url(../bg2.jpg) no-repeat center center fixed; @include background-size(cover);  position: relative;
-
-  h1.claim { font-size: 5em; text-transform: uppercase; font-weight: 700; width: 100%; text-align: center; color: white; min-height:100%; vertical-align: middle;display:table;  line-height: 100%; vertical-align: middle; position:absolute; top:40%; }
-
-  @import url(http://weloveiconfonts.com/api/?family=fontawesome);
-
-
-
-
-.fa {
- width: 59px;
- display: block;
- text-align: center;
- color:black;
- font:normal 45px 'FontAwesome';
- line-height:58px;
- text-rendering: auto;
- -webkit-font-smoothing: antialiased;
-}
-.fa-angle-double-down:before {content: "\f103";}
-
-.bounce{ position: absolute; bottom: 0px; left: 50% ; width: 60px; height: 60px ; font-weight: 700; color: white; font-size:25px;
-
-  &.start { @include animation(bounce 2s infinite) }
-
-}
- 
-
-}
-
-*/
-@-webkit-keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    -webkit-transform: translateY(0);
-  }
-  40% {
-    -webkit-transform: translateY(-30px);
-  }
-  60% {
-    -webkit-transform: translateY(-15px);
-  }
-}
-@-moz-keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    -moz-transform: translateY(0);
-  }
-  40% {
-    -moz-transform: translateY(-30px);
-  }
-  60% {
-    -moz-transform: translateY(-15px);
-  }
-}
-@-o-keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    -o-transform: translateY(0);
-  }
-  40% {
-    -o-transform: translateY(-30px);
-  }
-  60% {
-    -o-transform: translateY(-15px);
-  }
-}
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-30px);
-  }
-  60% {
-    transform: translateY(-15px);
-  }
-}
-/* ---- grid ---- */
-/* line 232, sass/style.scss */
-.grid {
-  background: #DDD;
-  max-width: 1200px;
-}
-
-/* clear fix */
-/* line 238, sass/style.scss */
-.grid:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
-/* ---- .grid-item ---- */
-/* 5 columns, percentage width */
-/* line 247, sass/style.scss */
-.grid-item,
-.grid-sizer {
-  width: 22%;
-}
-
-/* line 252, sass/style.scss */
-.grid-item {
-  float: left;
-  height: 100px;
-  background: #0D8;
-  border: 2px solid #333;
-  border-color: rgba(0, 0, 0, 0.7);
-}
-
-/* line 260, sass/style.scss */
-.gutter-sizer {
-  width: 4%;
-}
-
-/* line 262, sass/style.scss */
-.grid-item--width2 {
-  width: 48%;
-}
-
-/* line 263, sass/style.scss */
-.grid-item--height2 {
-  height: 200px;
-}
+select {
+  width: 100%; }

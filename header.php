@@ -6,23 +6,18 @@
   <title>The Brand New Web Site <?php echo get_the_title( $ID ); ?></title>
   <meta name="description" content="The Brand New Web Site">
   <meta name="author" content="Jonathan Fuchs">
-  <link rel="stylesheet" href=" <?php echo get_bloginfo('template_directory'); ?>/css/style.css">
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <?php wp_head(); ?> 
   <script src="<?php echo get_bloginfo('template_directory'); ?>/js/vendor/modernizr.js"></script>
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 </head>
-<body class="index">
+<body>
   <header>
-    <div id="logo">JNTHN&times;PHTGRPH</div>
-    <a href="/" title="Return to the homepage" id="logo">
-      <img src="/images/logo.gif" alt="jnthn logo" />
-    </a>
-    <a href="#" class="hamburger"><span></span></a>
-    <div id="mainNavWrapper">
+    <a href="<?php echo site_url();?>" title="Return to the homepage" id="logo">JNTHN.CH</a>
+    <a href="#" class="hamburger" rel="nofollow"><span></span></a>
+    <nav id="mainNavWrapper">
     <?php
       $defaults = array(
         'theme_location'  => '',
@@ -44,5 +39,5 @@
       );
       wp_nav_menu( $defaults );
     ?>   
-    </div> 
+    </nav> 
   </header>

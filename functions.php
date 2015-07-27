@@ -24,7 +24,6 @@
  * @subpackage Twenty_Fifteen
  * @since Twenty Fifteen 1.0
  */
-
 /**
 * includes functions to keep functions.php clean
 */
@@ -35,7 +34,6 @@ foreach ($dir as $fileinfo) {
       include_once 'functions/'.$fileinfo->getFilename();
     }
 }
-
 /**
 *	Register Menus
 *	https://codex.wordpress.org/Navigation_Menus
@@ -50,5 +48,27 @@ function register_my_menus() {
   );
 }
 add_action( 'init', 'register_my_menus' );
+/**
+* Register style sheet.
+* https://codex.wordpress.org/Function_Reference/wp_register_style
+*/
+function jnthn2_enqueue_custom_stylesheets() {
+  wp_enqueue_style( 'mytheme-custom', get_template_directory_uri() . '/css/style.css' );
+}
+add_action( 'wp_enqueue_scripts', 'jnthn2_enqueue_custom_stylesheets', 11 );
+
+/**
+* Enabling Support for Post Thumbnails
+* https://codex.wordpress.org/Post_Thumbnails
+*/
+
+if ( function_exists( 'add_theme_support' ) ) { 
+  add_theme_support( 'post-thumbnails' );
+  set_post_thumbnail_size( 150, 150, true ); // default Post Thumbnail dimensions (cropped)
+
+  // additional image sizes
+  // delete the next line if you do not need additional image sizes
+  add_image_size( 'category-thumb', 300, 9999 ); //300 pixels wide (and unlimited height)
+}
 
 

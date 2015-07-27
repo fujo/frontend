@@ -14,6 +14,7 @@ https://learn.jquery.com/code-organization/concepts/
 
 		_: function () {
 			this.hero._();
+			
 			this.test._();
 			this.mainNav._();
 			this.sectionHero._();
@@ -27,53 +28,11 @@ https://learn.jquery.com/code-organization/concepts/
 
 				var self = this;
 
-				this.$i = $('.mhover');
-
-				console.log(this.$i);
-
-				function throttle(fn, delay) {
-					var allowSample = true;
-
-					return function(e) {
-						if (allowSample) {
-							allowSample = false;
-							setTimeout(function() { allowSample = true; }, delay);
-							fn(e);
-						}
-					};
-				}
-
-				this.$i.on('hover', function(){
-
-					//console.log('hover');
-
+				$(window).load(function() {
+				  $('.flexslider').flexslider({
+				    animation: "slide"
+				  });
 				});
-
-				window.addEventListener('mousemove', throttle(function(ev) {
-
-					var xVal 	= -1/(win.height/2)*ev.clientY + 1,
-						yVal 	= 1/(win.width/2)*ev.clientX - 1,
-						transX	= 20/(win.width)*ev.clientX - 10,
-						transY 	= 20/(win.height)*ev.clientY - 10,
-						transZ 	= 100/(win.height)*ev.clientY - 50;
-
-					console.log(transZ);
-
-					self.$i.css({
-
-					
-    					//'-moz-transform': 	'perspective(1000px) translate3d(' + transX + 'px,' + transY + 'px,' + transZ + 'px) rotate3d(' + xVal + ',' + yVal + ',0,2deg)';
-
-						//'-webkit-transform':'perspective(1000px) translate3d(' + transX + 'px,' + transY + 'px,' + transZ + 'px) rotate3d(' + xVal + ',' + yVal + ',0,2deg)',
-						//'-moz-transform': 'perspective(1000px) translate3d(" + transX + "px," + transY + "px," + transZ + "px) rotate3d(" + xVal + "," + yVal + ",0,2deg)'
-
-					});
-
-					//self.$i.style.WebkitTransform = 'perspective(1000px) translate3d(' + transX + 'px,' + transY + 'px,' + transZ + 'px) rotate3d(' + xVal + ',' + yVal + ',0,2deg)';
-					//self.$i.style.transform = 'perspective(1000px) translate3d(' + transX + 'px,' + transY + 'px,' + transZ + 'px) rotate3d(' + xVal + ',' + yVal + ',0,2deg)';
-				
-				}, 100));
-
 
 			}
 
@@ -87,6 +46,8 @@ https://learn.jquery.com/code-organization/concepts/
 			},
 			objet : { "foo":"bar", 99:100}
 		},
+
+
 		mainNav : {
 			_: function(){
 				var self = this;
@@ -120,42 +81,32 @@ https://learn.jquery.com/code-organization/concepts/
     				if(win.scrollTop() == 0) $(".bounce").addClass("start");
     				else $(".bounce").removeClass("start");
     				//////
-    				var topH 	= $(".fade").position().top,
-    					dH 		= doc.scrollTop() - topH;
-
-    					console.log(topH +' - '+ dH);
-
-    				//$(".fade").css('opacity', opacity);
 
 
-
-    				/*
-    				var offset = 	doc.scrollTop(),
-    								opacity=1;
-
-				    if ( offset <= fadeStart ) opacity=1 ;
-				    else if ( offset <= fadeUntil ) opacity=1-offset/fadeUntil
-					*/
-				    //console.log(opacity)
-    
-    				//$(".fade").css('opacity', opacity);
-				
 
 
 				});
 			}
 		},
+
 		/* parallax */
+
 		parallax : {  
+			options : {
+				speed: -0.2 	//
+			},
 			_: function(){
-				win.on("scroll", function(e){
-				    var scrolled = win.scrollTop();
-    				$('.parallax').css('background-position', 'center ' + (scrolled * -0.2) + 'px');
-				});
+				var self = this;
+				this.$els = $('.parallax');
+				this.$els.each(function(){
+					var $el = $(this);
+					win.on("scroll", function(e){
+				    	var scrolled = win.scrollTop() - $el.position().top;
+	    				$el.css('background-position', 'center ' + (scrolled * self.options.speed ) + 'px');
+					});
+				})
 			}
 		},
-
-
 
 		isotope : {
 			_: function(){
@@ -178,25 +129,37 @@ https://learn.jquery.com/code-organization/concepts/
 			}
 		},
 
-		/* interactiv and css things */
+		/* interactive and css things */
 
 		helpers : {
 
 			_: function() {
+				this.fixHeader._();
 				this.scrollToMore._();
 			},
 
-			scrollToMore: {
-				options: {
+			fixHeader : {
+				_: function() {
+					var self = this;
+					this.$h = $('header');
+					doc.on('scroll load resize' , function() {
+					    var top = $(this).scrollTop();
+					    // if statement to do changes
+					    top >= win.height() ? 
+					    self.$h.addClass('fixme').animate({top:0}, 'slow', 'swing') 
+					    : self.$h.removeClass('fixme');
+					});
+				}
+			},
+
+			scrollToMore : {
+				options : {
 					animScrollSpeed: 350
 				},
 				_: function() {
 					this.$sfm = $('.scrolly');
-
 					if(this.$sfm.length < 1) return;
-
 					var options = this.options;
-
 					this.$sfm.on('click', function(e){
 						e.preventDefault();
 						var  $wH = win.height();
