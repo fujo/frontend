@@ -26,7 +26,7 @@
 
 				<?php //echo do_shortcode('[gallery]'); ?>
 
-
+				<a href="#" class="btn close">close</a>
 			</div>
 			<?php endwhile; ?>
 			<?php endif; ?>

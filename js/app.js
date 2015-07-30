@@ -62,7 +62,9 @@ https://learn.jquery.com/code-organization/concepts/
 				  //alert( "Load was performed."+ data );
 				  $('body').addClass('loaded');
 				  //$('body > .content').height($(this).outerHeight());
-				  self._close();
+				  
+				  self.$overlay.css({'top': self.scrollTop });
+				  self._initClose();
 				})
 				.addClass('show')
 				.offset().top;
@@ -70,7 +72,7 @@ https://learn.jquery.com/code-organization/concepts/
 
 
 			},
-			_close: function(){
+			_initClose: function(){
 				var self = this;
 				this.$btnC = this.$overlay.find('.close');
 				this.$btnC.on('click', function(e){
@@ -113,16 +115,22 @@ https://learn.jquery.com/code-organization/concepts/
 					e.preventDefault();
 					$this = $(this);
 					$this.toggleClass('active');
-					self._open(self.$m);
-					$('body').toggleClass('noScroll');
+					self._open();
 				});
 			},
 			_open: function(el){
-				var $el = el;
-				$el.toggleClass('open');
-			},
-			_close: function(el){
+				var self = this;
+				this.$m.toggleClass('open');
 
+				this.$hrefs = this.$m.find('a');
+
+				this.$hrefs.on('click', function(){
+					self._close();
+				})
+			},
+			_close: function(){
+				this.$m.removeClass('open');
+				this.$t.removeClass('active');
 			}
 		},
 		sectionHero : {
@@ -132,7 +140,7 @@ https://learn.jquery.com/code-organization/concepts/
 					fadeUntil=$win.height();
 
 				$win.on("load resize scroll", function(e){
-					$("#hero").height( $win.height() );
+					$("#hero").outerHeight( $win.height() );
 					///////
     				if($win.scrollTop() == 0) $(".bounce").addClass("start");
     				else $(".bounce").removeClass("start");
@@ -191,7 +199,8 @@ https://learn.jquery.com/code-organization/concepts/
 
 			_: function() {
 				this.fixHeader._();
-				this.scrollToMore._();
+				this.scrollDown._();
+				this.scrollHome._();
 				this.fader._();
 				this.jumbotron._();
 			},
@@ -212,7 +221,7 @@ https://learn.jquery.com/code-organization/concepts/
 				}
 			},
 
-			scrollToMore : {
+			scrollDown : {
 				options : {
 					animScrollSpeed: 1000,
 					easing: "easeInOutQuint"
@@ -225,6 +234,22 @@ https://learn.jquery.com/code-organization/concepts/
 						e.preventDefault();
 						var  $wH = $win.height();
 						$('html, body').animate({scrollTop: $wH }, options.animScrollSpeed, options.easing);
+					});
+				}
+			},
+
+			scrollHome : {
+				options : {
+					animScrollSpeed: 1000,
+					easing: "easeInOutQuint"
+				},
+				_: function() {
+					this.$sfm = $('.scrollHome');
+					if(this.$sfm.length < 1) return;
+					var options = this.options;
+					this.$sfm.on('click', function(e){
+						e.preventDefault();
+						$('html, body').animate({scrollTop: 0 }, options.animScrollSpeed, options.easing);
 					});
 				}
 			},
