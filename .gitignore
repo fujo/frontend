@@ -1,3 +1,6 @@
+# osx hidden files
+.DS_Store
+
 # no root jpeg files
 /*.jpg
 /*.jpeg
