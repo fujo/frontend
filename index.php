@@ -16,6 +16,8 @@
 
 get_header(); ?>
 
+<div class="content">
+
   <section id="hero" class="parallax">
       <!--
       <div class="static"></div>
@@ -42,10 +44,10 @@ get_header(); ?>
         <!-- <a href="" rel="follow" title="portfolio">bienvenidos</a>-->
         <span>merci d'être ici &hearts;</span>
       </div>
-      <a href="#" class="more bounce scrolly" rel="nofollow"></a>
+      <a href="#" class="more bounce scrollDown fade" rel="nofollow"></a>
   </section>
 
-  <div class="content">
+  
 
      <?php 
 

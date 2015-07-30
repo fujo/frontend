@@ -14,11 +14,18 @@
   <![endif]-->
 </head>
 <body>
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+  </div>
+  <div id="overlay">
+  </div>
+
   <header>
     <a href="<?php echo site_url();?>" title="Return to the homepage" id="logo">JNTHN.CH</a>
     <a href="#" class="hamburger" rel="nofollow"><span></span></a>
     <nav id="mainNavWrapper">
     <?php
+    /*
       $defaults = array(
         'theme_location'  => '',
         'menu'            => '',
@@ -37,7 +44,15 @@
         'depth'           => 0,
         'walker'          => ''
       );
-      wp_nav_menu( $defaults );
+      //wp_nav_menu( $defaults ); // printed with ul+li
+      */
+      $menuParameters = array(
+        'container'       => false,
+        'echo'            => false,
+        'items_wrap'      => '%3$s',
+        'depth'           => 0,
+      );
+      echo strip_tags(wp_nav_menu( $menuParameters ), '<a>' );
     ?>   
     </nav> 
   </header>
