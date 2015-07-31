@@ -32,14 +32,14 @@ import
 /*-------------------------------------------------------------------------------------------
 Vars
 --------------------------------------------------------------------------------------------*/
-$primary:         #FBC599;
-$secondary:       #CDBB93;
-$quiet:           #9EAE8A;
+$primary:         #D4D4D4;
+$secondary:       #3E4651;
+$quiet:           #D4D4D4;
 $loud:            #335650;
 $white:           white;
 $black:           black;
-$link:            #F35F55;
-$link-hover:      #9EAE8A;
+$link:            #3E4651;
+$link-hover:      #D4D4D4;
 $font-family:     'Open Sans', Arial, sans-serif;
 $font-family-hn:  'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $font-family-em:   'Pacifico', cursive;
@@ -61,8 +61,8 @@ body { font: normal 1em/1.6em $font-family; color: $color; }
 
 h1, h2, h3, h4, h5, h6, p { margin-top: 0; margin-bottom: .3em; } 
 
-h1 { font: 700 5em/1.5em $font-family-hn; letter-spacing: -.1em; text-transform: lowercase; }
-h2 { font: 700 4em/1.5em $font-family-hn; letter-spacing: -.05em; text-transform: lowercase; color: $quiet; }
+h1 { font: 700 5em/1.5em $font-family-hn; letter-spacing: -.1em; text-transform: lowercase; color: $quiet;  }
+h2 { font: 700 4em/1.5em $font-family-hn; letter-spacing: -.075em; text-transform: lowercase; color: $quiet; }
 h3 { font: 400 3em/1.5em $font-family-hn; text-transform: uppercase; letter-spacing: -.1em; }
 h4 {}
 h5 {}
@@ -71,24 +71,55 @@ h6 {}
 p { }
 
 /*-------------------------------------------------------------------------------------------
+Reset
+--------------------------------------------------------------------------------------------*/
+ul, li, figure { list-style: none; margin: 0; padding: 0; }
+/*-------------------------------------------------------------------------------------------
 Links
 --------------------------------------------------------------------------------------------*/
 a { color: $link; text-decoration: none; 
 
-  &.btn { display:inline-block; padding: 5px 15px; /*height: 40px; line-height: 40px;*/ background: $link; color: $white; border: 4px solid $link; @include border-radius(8px);
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+
+  &:hover { color: $link-hover; cursor: pointer; }
+
+  &.btn { display:inline-block; padding: 5px 15px; /*height: 40px; line-height: 40px;*/ background: $link; color: $white; border: 2px solid $link; @include border-radius(4px); text-transform: uppercase; font-weight: 300;
 
     &:hover { border-color: $link-hover; background: $link-hover; color: $white; }
 
-    &.more {
+    &.icn { 
 
-      &:after { position: relative; top:2px; content: "\e73c"; font-family: 'icomoon'; margin: 0 0 0 10px; }
+      &:after,
+      &:before { font-family: 'icomoon'; position: relative; margin: 0 0 0 10px; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; /* Better Font Rendering =========== */ -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+      &:hover{ 
+
+        &.more:after { right: -2px; }
+
+        &.close:after { font-size: 0.9em; }
+
+        &.top:after { top: -2px; }
+
+      }
+
+      &.more:after { content: "\f054"; top:1px; }
+ 
+      &.close:after { content: "\f00d"; }
+
+      &.edit:after { content: "\f044"; top:1px; }
+
+      &.top:after { content: "\f077"; }
+
+      &.expand:after { content: "\f065"; margin: 0; }
 
     }
 
   }
 
 }
-a:hover { color: $link-hover; cursor: pointer; }
 /*-------------------------------------------------------------------------------------------
 Img
 --------------------------------------------------------------------------------------------*/
@@ -134,29 +165,27 @@ Layout
 /* .loaded #loader { opacity: 0; } */
 
 .loaded #loader-wrapper {  
+
   opacity: 0;
   transition: opacity .25s ease-in-out;
   -moz-transition: opacity .25s ease-in-out;
   -webkit-transition: opacity .25s ease-in-out; 
   display: none;
+
  }
 
 /* overlay */
 
-#overlay { position: fixed; right: -3000px; top: 0; width: 100%; height: 100%; min-height: 100%; z-index: 999; background: $white; opacity:0; visibility: collapse;
+#overlay { position: fixed; right: -1000px; top: 0; width: 100%; height: 100%; min-height: 100%; z-index: 999; background: $white; opacity:0; visibility: collapse;
   
   -webkit-transition: .5s ease-in-out;
   -moz-transition: .5s ease-in-out;
   -o-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
 
-
-
   &.show { opacity:1; visibility: visible; right: 0; }
 
 }
-
-
 /* main nav */
 
 body.noScroll { overflow: hidden; }
@@ -178,7 +207,7 @@ body.noScroll { overflow: hidden; }
 
 header { z-index: 3; position: absolute; top:0; left:0; z-index:1; width:100%; height:100px; height: 75px;
 
-  &.fixme { position: fixed; background: $secondary; }
+  &.fixme { position: fixed; background: $quiet; }
 
   #logo { float: left; line-height: 75px; font-size: 25px; font-weight: 700; padding:0 0 0 25px; color: $white; font-family: $font-family-hn; 
 
@@ -214,23 +243,18 @@ header { z-index: 3; position: absolute; top:0; left:0; z-index:1; width:100%; h
 
 /* content */
 
-section#hero { position:relative; background: #123456 url(../bg3.jpg) no-repeat  fixed; @include background-size(cover); 
+section#hero { position:relative; background: #123456 url(../bg3.jpg) no-repeat center center fixed; @include background-size(cover); 
 
-  .jumbotron { line-height: .7em; text-transform: uppercase; font-weight: 700; width: 100%; text-align: center; color: white; vertical-align: middle;display:table; vertical-align: middle; position:absolute; top:40%; 
+  .jumbotron { width: 100%; text-align: center; color: white; vertical-align: middle;display:table; position:absolute; top:40%; 
 
     /* &:before { display: block; content: "\e7eb"; font-family: 'icomoon'; } */
 
-    span { display: block; font: 400 .5em/1em $font-family-em; }
+    h1 { color: $white; }
 
-  }
+    span { display: block; overflow: hidden;
 
-  .more { position: absolute; bottom: 25px; left: 0px; display: block; width:100%; text-align: center;  font-weight: 700; color: white; font-size:25px; cursor: pointer; 
-
-    &:after { display:block; font-family: "icomoon"; content: "\e73e"; }
-
-    &.bounce{
-
-      &.start { @include animation(bounce 4s infinite) }
+      &:after,
+      &:before { content:''; display: block; height: 1px;  background: $white; margin: 20px 0;}
 
     }
 
@@ -238,17 +262,66 @@ section#hero { position:relative; background: #123456 url(../bg3.jpg) no-repeat 
 
 }
 
-.content > section { padding: 75px 0; 
+#inter--1,
+#inter--2,
+#inter--3 { position:relative; background: #123456 url(../bg32.jpg) no-repeat center center fixed; @include background-size(cover);
 
-  /*&:after { display: block; content: ""; width: 100%; background: red; height: 2px; }*/
+  overflow: hidden;
 
-  h2 { text-shadow: 4px 3px 0px #fff, 9px 8px 0px $link;
+  &:before { position: absolute; left: -40px; top: -35px; display: block; content: ''; height: 100px; width: 200%; background: $white; 
 
-    &:after { }
+    -moz-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    -webkit-transform: rotate(3deg);
+
+    border-bottom: 10px solid $quiet;
+
+  }
+
+  &:after { position: absolute; left: -40px; bottom: -80px; display: block; content: ''; height: 100px; width: 200%; background: $white; 
+
+    -moz-transform: rotate(-3deg);
+    -ms-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    -webkit-transform: rotate(3deg);
+
+    border-top: 10px solid $quiet;
 
   }
 
 }
+
+.scrollDown { position: absolute; bottom: 25px; left: 0px; display: block; width:100%; text-align: center;  font-weight: 700; color: white; font-size:25px; cursor: pointer; 
+
+  &:after { display:block; font-family: "icomoon"; content: "\f078"; }
+
+  &.black { color: $black; }
+
+  &.bounce{
+
+    &.start { @include animation(bounce 4s infinite) }
+
+  }
+
+}
+
+.content > section { padding: 150px 0; 
+
+  /*&:after { display: block; content: ""; width: 100%; background: red; height: 2px; }*/
+
+  .container { 
+
+      h2 { /*text-shadow: 4px 3px 0px #fff, 9px 8px 0px $link;*/
+
+        &:after { }
+
+      }
+
+  }
+
+}
+
 section#about { 
   .container { 
 
@@ -257,7 +330,7 @@ section#about {
   }
 
 }
-section#series { background: $secondary url(../bg2.jpg) no-repeat center center fixed; @include background-size(cover); position: relative;
+section#series { 
 
   .container { 
 
@@ -286,6 +359,56 @@ section#portfolio { background: $loud;
 
 }
 
+.grid { padding: 20px 20px 100px 20px; max-width: 1300px; margin: 0 auto; list-style: none; text-align: center; 
+
+  li { display: inline-block; width: 440px; margin: 0; padding: 20px; text-align: left; position: relative;
+
+    figure { margin: 0; position: relative; overflow: hidden;
+
+      img { max-width: 100%; display: block; position: relative; transition: transform 0.4s; }
+
+    }
+
+  }
+
+  figcaption { position: absolute; top: 0; left: 0; padding: 20px; background: #2c3f52; color: #ed4e6e;
+  
+  height: 100px;
+  width: 100%;
+  top: auto;
+  bottom: 0;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 0.4s, opacity 0.1s 0.3s;
+  background: blue;
+
+
+    h3 { margin: 0; padding: 0; color: #fff; }
+
+    /*span:before { content: 'by '; }*/
+
+    a { text-align: center; padding: 5px 10px; border-radius: 2px; display: inline-block; background: #ed4e6e; color: #fff; 
+
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+
+    }
+
+  }
+
+}
+
+.no-touch .grid figure:hover img,
+.grid figure img {
+  transform: translateY(-50px);
+}
+
+ul.portfolio { list-style: none;
+
+  li { list-style: none }
+
+}
 
 
 

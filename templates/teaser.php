@@ -12,7 +12,7 @@ $content = apply_filters('the_content', $post->post_content);
     <div class="six columns">
       <h2><?php echo $title; ?></h2>
       <?php echo $content; ?>
-      <a href="/page-d-exemple" class="btn more ajax" rel="follow" title="more">more</a>
+      <a href="/page-d-exemple" class="btn icn more ajax" rel="follow" title="more">more</a>
     </div>
     <div class="six columns">
       <figure class="circle">

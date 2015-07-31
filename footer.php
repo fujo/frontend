@@ -3,7 +3,7 @@
   	<div class="container">
   		<div class="row">
   			<div class="sixteen columns">
-  				<a href="#" rel="nofollow" class="btn scrollHome">top</a>
+  				<a href="#" rel="nofollow" class="btn icn top scrollHome">top</a>
   				<?php if (!dynamic_sidebar('footer')) :?> <?php endif;?>
   			</div>
   		</div>

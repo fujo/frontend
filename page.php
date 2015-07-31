@@ -1,13 +1,19 @@
 <div class="content page">
-	<div class="no-container">
+	<div class="container">
+
+		<div class="row">
+			<div class="twelve columns right">
+			<a href="#" class="btn icn close">close</a>
+			</div>	
+		</div>
+
+
 		<div class="row">
 			<?php if (have_posts()) : ?> 
 			<?php while (have_posts()) : the_post(); ?>
-			<div class="four columns" style="background-image: url(<?php echo wp_get_attachment_thumb_url( get_post_thumbnail_id( $post->ID ) ); ?>); ">
-			&nbsp;
-			</div>
-			<div class="eight columns">
-				<a href="#" class="btn close">close</a>
+			
+			<div class="twelve columns">
+				
 
 				<?php
 
@@ -26,7 +32,7 @@
 
 				<?php //echo do_shortcode('[gallery]'); ?>
 
-				<a href="#" class="btn close">close</a>
+				<a href="#" class="btn icn close">close</a>
 			</div>
 			<?php endwhile; ?>
 			<?php endif; ?>

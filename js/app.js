@@ -14,7 +14,7 @@ https://learn.jquery.com/code-organization/concepts/
 
 		_: function () {
 
-			this.loader._();
+			this.loading._();
 
 			this.ajax._();
 
@@ -27,7 +27,7 @@ https://learn.jquery.com/code-organization/concepts/
 			this.helpers._();
 		},
 
-		loader : {
+		loading : {
 
 			_: function() {
 				$('#container').imagesLoaded( function() {
@@ -42,44 +42,52 @@ https://learn.jquery.com/code-organization/concepts/
 
 				var self = this;
 
-				this.$as 		= $('a.ajax');
-				this.$overlay 	= $('#overlay');
-				this.scrollTop	= 0;
+				this.$as 			= $('a.ajax');
+				this.$overlay 		= $('#overlay');
+				this.scrollTopPos	= 0;
+				this.$content		= $('.content');
 
 				this.$as.on('click', function(e){
 					e.preventDefault();
 					var $this = $(this);
 					href = $this.attr("href");
-					self.scrollTop = $doc.scrollTop();
-					self._load(href)
+					self.scrollTopPos = $doc.scrollTop();
+					self._load(href);
 				})
 
 			},
-			_load: function(href){
+			_load: function(href) {
+
 				var self = this;
+
 				$('body').removeClass('loaded');
 				this.$overlay.load( href + " .content", function(data) {
-				  //alert( "Load was performed."+ data );
-				  $('body').addClass('loaded');
-				  //$('body > .content').height($(this).outerHeight());
-				  
-				  self.$overlay.css({'top': self.scrollTop });
-				  self._initClose();
+				  	//alert( "Load was performed."+ data );
+					$('body').addClass('loaded');	
+				  	self.$overlay.css({'position': 'absolute' });
+				  	$doc.scrollTop(0);
+				  	self._initClose();
 				})
 				.addClass('show')
 				.offset().top;
 
+				//APP.loading._();
 
+				this.$content.height(0).css({'overflow': 'hidden'});
 
 			},
-			_initClose: function(){
+			_initClose: function() {
+
 				var self = this;
+
 				this.$btnC = this.$overlay.find('.close');
 				this.$btnC.on('click', function(e){
 					e.preventDefault();
-					self.$overlay.removeClass('show');
-					$doc.scrollTop(self.scrollTop);
+					self.$overlay.removeClass('show').css({'position': 'fixed' });
+					self.$content.removeAttr('style');
+					$doc.scrollTop(self.scrollTopPos);
 				})
+
 			}
 		},
 
@@ -97,14 +105,6 @@ https://learn.jquery.com/code-organization/concepts/
 			}
 
 		},
-
-		// petit
-		// test
-
-
-
-		//
-		// 
 
 		mainNav : {
 			_: function(){
@@ -140,7 +140,7 @@ https://learn.jquery.com/code-organization/concepts/
 					fadeUntil=$win.height();
 
 				$win.on("load resize scroll", function(e){
-					$("#hero").outerHeight( $win.height() );
+					//$("#hero").outerHeight( $win.height() );
 					///////
     				if($win.scrollTop() == 0) $(".bounce").addClass("start");
     				else $(".bounce").removeClass("start");
@@ -174,7 +174,7 @@ https://learn.jquery.com/code-organization/concepts/
 
 		isotope : {
 			_: function(){
-				$('.grid').isotope({
+				$('.isotope').isotope({
 					/*
 					itemSelector: '.grid-item',
 					percentPosition: true,
@@ -184,7 +184,7 @@ https://learn.jquery.com/code-organization/concepts/
 					}
 					*/
 					layoutMode: 'fitRows',
-					itemSelector: '.grid-item',
+					itemSelector: 'li',
 					percentPosition: true,
 					fitRows: {
 					  gutter: '.gutter-sizer'
@@ -201,6 +201,7 @@ https://learn.jquery.com/code-organization/concepts/
 				this.fixHeader._();
 				this.scrollDown._();
 				this.scrollHome._();
+				this.winHeight._();
 				this.fader._();
 				this.jumbotron._();
 			},
@@ -228,7 +229,7 @@ https://learn.jquery.com/code-organization/concepts/
 				},
 				_: function() {
 					this.$sfm = $('.scrollDown');
-					if(this.$sfm.length < 1) return;
+					if ( !this.$sfm.length ) return;
 					var options = this.options;
 					this.$sfm.on('click', function(e){
 						e.preventDefault();
@@ -251,6 +252,15 @@ https://learn.jquery.com/code-organization/concepts/
 						e.preventDefault();
 						$('html, body').animate({scrollTop: 0 }, options.animScrollSpeed, options.easing);
 					});
+				}
+			},
+
+			winHeight : {
+				_: function() {
+
+					this.$as = $('.winHeight');
+					this.$as.css({'height':$win.height()});
+
 				}
 			},
 

@@ -18,168 +18,139 @@ get_header(); ?>
 
 <div class="content">
 
-  <section id="hero" class="parallax">
-      <!--
-      <div class="static"></div>
-      <div class="mhover"></div>
- 
-      <div class="flexslider">
-        <ul class="slides">
-          <li>
-            <img src="slide1.jpg" />
-          </li>
-          <li>
-            <img src="slide2.jpg" />
-          </li>
-          <li>
-            <img src="slide3.jpg" />
-          </li>
-          <li>
-            <img src="slide4.jpg" />
-          </li>
-        </ul>
-      </div>     -->
+
+  <section id="hero" class="parallax winHeight">
       <div class="jumbotron fade">
         <h1>Bonjour</h1>
         <!-- <a href="" rel="follow" title="portfolio">bienvenidos</a>-->
-        <span>merci d'être ici &hearts;</span>
+        <!--<span>All I do, I do with love, pleasure and con gusto </span>-->
       </div>
       <a href="#" class="more bounce scrollDown fade" rel="nofollow"></a>
   </section>
 
-  <section id="about">
-    <?php 
-      $id=13; 
-      include (TEMPLATEPATH . "/templates/teaser.php"); 
-    ?>
-  </section> 
-
-    <section id="series">
-    <?php 
-      $id=23; 
-      include (TEMPLATEPATH . "/templates/teaser.php"); 
-    ?>
-    </section>
-
-    <section id="about">
-      <div class="container">
-        <div class="row">
-          <div class="six columns">
-            <h2>About</h2>
-            <?php 
-            $id=13; 
-            $post = get_post($id); 
-            $content = apply_filters('the_content', $post->post_content); 
-            echo $content;  
-            ?>
-            <a href="/" class="more" rel="follow" title="more">more</a>
-          </div>
-          <div class="six columns image">
-            <figure class="circle">
-              <img src="http://localhost/jnthn2_ch/wp-content/uploads/2015/07/bg-300x272.jpg">
-            </figure>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="series" class="parallax">
-      <div class="container">
-       <div class="row">
-          <div class="six columns">
-as
-          </div>
-          <div class="six columns">
-            <h2>series</h2>
-            <!--
-            <p>Ut rutrum ultricies lacinia. Pellentesque at mattis turpis, ac aliquet urna. Duis at feugiat augue, blandit varius tortor. Aenean laoreet pharetra tincidunt. Maecenas et placerat ante.</p>
-            -->
-            <a href="/" class="more" rel="follow" title="more">more</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="portfolio">
-      <div class="container">
-        <div class="row">
-          <div class="six columns">
-            <h2>portfolio</h2>
-            <?php 
-            $id=13; 
-            $post = get_post($id); 
-            $content = apply_filters('the_content', $post->post_content); 
-            echo $content;  
-            ?>
-            <a href="/" class="more" rel="follow" title="more">more</a>
-          </div>
-          <div class="six columns image">
-            <figure class="circle">
-              <img src="http://localhost/jnthn2_ch/wp-content/uploads/2015/07/bg-300x272.jpg">
-            </figure>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-
-  <section class="container">
-
-    <div class="row">
-      <h2>Series</h2>
-    </div>
-
-    <div class="row">
-      <div class="six columns text">
-        <h3>dignissim</h3>
-        <p>Nunc bibendum nibh nulla, nec dictum ipsum finibus eget.</p>
-      </div>
-      <div class="six columns image">1/3
-        <figure></figure>
-        <button type="button">More</button> 
-      </div>
-    </div>
-
-  </section>
 
   <section>
 
-    <figure>
+    <div class="container">
 
-    <noscript><img src="img/screen.JPG" alt="alttext"></noscript>
-    </figure>
+      <div class="row">
+        <div class="twelve columns">
+          <h2>best of</h2>
+        </div>
+        <ul class="twelve columns isotope">
+          <li class="gutter-sizer"></li>
+          <?php query_posts('cat=3'); ?>
+          <?php if (have_posts()) : ?> 
+          <?php while (have_posts()) : the_post(); ?>
+          <li>
+            <figure>
+              <?php echo get_the_post_thumbnail( $page->ID, 'portfolio' ); ?>
+              <figcaption>
+                <!--<h3><?php the_title(); ?></h3>-->
+                <!--<a href="http://lorempixel.com/g/200/200/" class="btn icn expand ajax"></a>-->
+              </figcaption>
+            </figure>
+          </li>
+          <?php endwhile; ?>
+          <?php endif; ?>
+        </ul>
+
+      </div>
+      <a href="#" class="more bounce scrollDown black fade" rel="nofollow"></a>
 
   </section>
 
+  <section id="inter--1" class="parallax winHeight">dfsdf</section> 
+
+   <section>
+
+    <div class="container">
+
+      <div class="row">
+        <div class="twelve columns">
+          <h2>Series</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="twelve columns">
+          <ul class="grid">
+            <li>
+              <figure>
+                <img src="http://lorempixel.com/g/200/200/" alt="img01">
+                <figcaption>
+                  <h3>Camera</h3>
+                  <span>Jacob Cummings</span>
+                  <a href="http://lorempixel.com/g/200/200/">Take a look</a>
+                </figcaption>
+              </figure>
+            </li>
+
+            <li>
+              <figure>
+                <img src="http://lorempixel.com/g/200/200/" alt="img01">
+                <figcaption>
+                  <h3>Camera</h3>
+                  <span>Jacob Cummings</span>
+                  <a href="http://lorempixel.com/g/200/200/">Take a look</a>
+                </figcaption>
+              </figure>
+            </li>
+
+            <li>
+              <figure>
+                <img src="http://lorempixel.com/g/200/200/" alt="img01">
+                <figcaption>
+                  <h3>Camera</h3>
+                  <span>Jacob Cummings</span>
+                  <a href="http://lorempixel.com/g/200/200/">Take a look</a>
+                </figcaption>
+              </figure>
+            </li>
+
+            <li>
+              <figure>
+                <img src="http://lorempixel.com/g/200/200/" alt="img01">
+                <figcaption>
+                  <h3>Camera</h3>
+                  <span>Jacob Cummings</span>
+                  <a href="http://lorempixel.com/g/200/200/">Take a look</a>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+  </section> 
 
 
 
-  <div class="grid">
+ 
 
-  <div class="gutter-sizer"></div>
-  <div class="grid-item grid-item--width2"></div>
-  <div class="grid-item"></div>
-  <div class="grid-item"></div>
-  <div class="grid-item"></div>
-  <div class="grid-item grid-item--width2"></div>
-  <div class="grid-item"></div>
-  <div class="grid-item grid-item--width2"></div>
-  <div class="grid-item grid-item--width2"></div>
-  <div class="grid-item"></div>
-  <div class="grid-item"></div>
-  <div class="grid-item"></div>
-  <div class="grid-item"></div>
-	  	
+  <section id="">
+    <?php 
+     $id=23; 
+      include (TEMPLATEPATH . "/templates/teaser.php"); 
+    ?>
+  </section>
 
-
-  </div>
+  <section id="inter--2" class="parallax winHeight">sdfsf</section> 
 
 
 
+  <section id="inter--3" class="parallax winHeight">sdfsdf</section> 
 
-  
-  </div>
+  <section id="contact">
+    <?php 
+     $id=23; 
+      include (TEMPLATEPATH . "/templates/teaser.php"); 
+    ?>
+  </section>
+
+</div>
 
 	
 
