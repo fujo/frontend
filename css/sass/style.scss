@@ -38,8 +38,8 @@ $quiet:           #D4D4D4;
 $loud:            #335650;
 $white:           white;
 $black:           black;
-$link:            #3E4651;
-$link-hover:      #D4D4D4;
+$link:            #D4D4D4;
+$link-hover:      #3E4651;
 $font-family:     'Open Sans', Arial, sans-serif;
 $font-family-hn:  'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $font-family-em:   'Pacifico', cursive;
@@ -114,6 +114,10 @@ a { color: $link; text-decoration: none;
       &.top:after { content: "\f077"; }
 
       &.expand:after { content: "\f065"; margin: 0; }
+
+      &.next:after { content: "\f0da"; top:1px; }
+
+      &.prev:before { content: "\f0d9"; top:1px; margin: 0 10px 0 0; }
 
     }
 
@@ -243,13 +247,15 @@ header { z-index: 3; position: absolute; top:0; left:0; z-index:1; width:100%; h
 
 /* content */
 
-section#hero { position:relative; background: #123456 url(../bg3.jpg) no-repeat center center fixed; @include background-size(cover); 
+#inter--hero { position:relative; background: #123456 url(../bg3.jpg) no-repeat center center fixed; @include background-size(cover); 
 
   .jumbotron { width: 100%; text-align: center; color: white; vertical-align: middle;display:table; position:absolute; top:40%; 
 
     /* &:before { display: block; content: "\e7eb"; font-family: 'icomoon'; } */
 
     h1 { color: $white; }
+
+    /*
 
     span { display: block; overflow: hidden;
 
@@ -258,13 +264,17 @@ section#hero { position:relative; background: #123456 url(../bg3.jpg) no-repeat 
 
     }
 
+    */
+
   }
 
 }
+/*  Adding height, width, viewBox, and CSS rules s */
+#fox { height: 79px; width: 113px; }
 
 #inter--1,
 #inter--2,
-#inter--3 { position:relative; background: #123456 url(../bg32.jpg) no-repeat center center fixed; @include background-size(cover);
+#inter--3 { position:relative; background: #123456 url(../bg2.jpg) no-repeat 50% 50% fixed; @include background-size(cover);
 
   overflow: hidden;
 
@@ -306,7 +316,7 @@ section#hero { position:relative; background: #123456 url(../bg3.jpg) no-repeat 
 
 }
 
-.content > section { padding: 150px 0; 
+.content section { padding: 100px 0; 
 
   /*&:after { display: block; content: ""; width: 100%; background: red; height: 2px; }*/
 
@@ -323,13 +333,15 @@ section#hero { position:relative; background: #123456 url(../bg3.jpg) no-repeat 
 }
 
 section#about { 
+
   .container { 
 
-    .row { text-align: right; }
+    .row {  }
 
   }
 
 }
+
 section#series { 
 
   .container { 
@@ -338,24 +350,64 @@ section#series {
 
   }
 
-  /*&:before { display: block; content: ''; position: absolute; top: 0;  height: 100px; background: red; width: 50px; }
-*/
 }
-section#portfolio { background: $loud;
+section#portfolio { 
 
   .container { 
 
-    .row { text-align: right; }
+    .row {  }
 
   }
 
 }
 
-.content.page { height: 100%; 
+.flexslider { /*background: $primary; */
 
-  .four { background: blue url('') no-repeat center center; background-size: cover; }
+  ul.slides {
 
+     li { text-align: center; position: relative;
 
+      a { position: absolute; top: 50%; left: 50%; }
+
+     }
+
+  }
+ 
+}
+
+.flex-nav { padding-top: 30px; }
+
+.custom-navigation { text-align: right;
+
+  .flex-control-paging { 
+
+    li { float: left; display: inline-block; }
+
+    a { width: 10px; height: 10px; display: inline-block; background: $quiet; font-size: 0; margin-right: 5px;  @include border-radius(50%); 
+
+      &.flex-active { background: $link-hover; }
+
+    }
+
+  }
+
+  .flex-control-nav { text-align: center; margin: 0; padding: 0; }
+
+}
+
+.custom-controls-container { text-align: right; }
+
+ul.isotope {
+
+  li { width: 32%; margin-bottom: 1%;
+
+    &.grid-sizer { margin-bottom: 0; }
+
+    &.gutter-sizer { width: 1%; margin-bottom: 0; }
+
+    &.wider { width: 65%; }
+
+  }
 
 }
 
@@ -416,3 +468,4 @@ ul.portfolio { list-style: none;
 /sass/partials
 --------------------------------------------------------------------------------------------*/
 @import 'partials/form';
+@import 'partials/magnific-popup';

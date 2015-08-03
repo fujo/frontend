@@ -8,3 +8,10 @@ RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?feeds2.feedburner.com/wpbeginne
 
 
 # ressources compression gzip format
+
+
+
+php_value upload_max_filesize 1024M
+php_value post_max_size 1024M
+php_value max_execution_time 1000
+php_value max_input_time 1000 

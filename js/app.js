@@ -15,10 +15,12 @@ https://learn.jquery.com/code-organization/concepts/
 		_: function () {
 
 			this.loading._();
+			this.magnificpopup._();
+			this.flexslider._();
 
 			this.ajax._();
 
-			this.hero._();
+			
 			
 			this.mainNav._();
 			this.sectionHero._();
@@ -32,9 +34,44 @@ https://learn.jquery.com/code-organization/concepts/
 			_: function() {
 				$('#container').imagesLoaded( function() {
   					$('body').addClass('loaded');
+  					APP.helpers.vivus._(); // draw the fox
 				});
 			}
 
+		},
+
+		magnificpopup : {
+
+			_: function() {
+
+				var self = this;
+
+				$('.magnificpopup').each(function() {
+
+					var self = this;
+
+				    $(this).magnificPopup({
+				        delegate: 'a', 
+				        type: 'image',
+				        closeOnContentClick: false, 
+				        closeOnBgClick: false,
+				        showCloseBtn: true,
+				        closeMarkup: '<a class="btn icn close">close</a>',
+				        gallery: {
+				        	enabled:true
+				        },
+				        callbacks: {
+				        	open: function() {
+						      $('a.btn.close').on('click', function(){
+						      	$.magnificPopup.close();
+						      })
+						    }
+				        }
+				    });
+				});
+
+
+			}
 		},
 
 		ajax : {
@@ -91,17 +128,25 @@ https://learn.jquery.com/code-organization/concepts/
 			}
 		},
 
-		hero : {
+		flexslider : {
 			_: function() {
 
 				var self = this;
 
-				$(window).load(function() {
 				  $('.flexslider').flexslider({
-				    animation: "slide"
+				    	animation: "slide",
+				    	controlsContainer: $(".custom-controls-container"),
+				    	customDirectionNav: $(".custom-navigation a"),
+			    	    animationLoop: true,
+			    	    smoothHeight: true
+				    	    /*
+						    itemWidth: 210,
+						    itemMargin: 5,
+						    minItems: 1,
+						    maxItems: 2
+						    */
 				  });
-				});
-
+				
 			}
 
 		},
@@ -146,9 +191,6 @@ https://learn.jquery.com/code-organization/concepts/
     				else $(".bounce").removeClass("start");
     				//////
 
-
-
-
 				});
 			}
 		},
@@ -157,7 +199,7 @@ https://learn.jquery.com/code-organization/concepts/
 
 		parallax : {  
 			options : {
-				speed: -0.2
+				speed: 0.04
 			},
 			_: function(){
 				var self = this;
@@ -166,7 +208,7 @@ https://learn.jquery.com/code-organization/concepts/
 					var $el = $(this);
 					$win.on("scroll", function(e){
 				    	var scrolled = $win.scrollTop() - $el.position().top;
-	    				$el.css('background-position', 'center ' + (scrolled * self.options.speed ) + 'px');
+	    				$el.css('background-position', '50% ' + (50 + scrolled * self.options.speed ) + '%');
 					});
 				})
 			}
@@ -175,20 +217,21 @@ https://learn.jquery.com/code-organization/concepts/
 		isotope : {
 			_: function(){
 				$('.isotope').isotope({
-					/*
-					itemSelector: '.grid-item',
+					
+					itemSelector: 'li',
 					percentPosition: true,
 					masonry: {
 						// use outer width of grid-sizer for columnWidth
-						columnWidth: '.grid-sizer'
+						columnWidth: '.grid-sizer',
+						gutter: '.gutter-sizer'
 					}
-					*/
+					/*
 					layoutMode: 'fitRows',
 					itemSelector: 'li',
 					percentPosition: true,
 					fitRows: {
 					  gutter: '.gutter-sizer'
-					}
+					}*/
 				});
 			}
 		},
@@ -204,6 +247,15 @@ https://learn.jquery.com/code-organization/concepts/
 				this.winHeight._();
 				this.fader._();
 				this.jumbotron._();
+			},
+
+			vivus : {
+				_: function() {
+
+					new Vivus('fox', {type: 'delayed', duration: 100});
+
+				}
+
 			},
 
 			fixHeader : {

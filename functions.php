@@ -39,3 +39,5 @@ function custom_edit_post_link($output) {
  return $output;
 }
 add_filter('edit_post_link', 'custom_edit_post_link');
+
+
