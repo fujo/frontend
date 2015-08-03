@@ -138,7 +138,11 @@ get_header(); ?>
 
     </div>
 
-</section>
+  </section>
+
+  <section id="map" class="winHeight">
+    <div id="map-canvas" style="width: 100%; height: 100%"></div>
+  </section>
 
 
 
@@ -212,12 +216,7 @@ get_header(); ?>
 
  
 
-  <section id="">
-    <?php 
-     $id=23; 
-      include (TEMPLATEPATH . "/templates/teaser.php"); 
-    ?>
-  </section>
+
 
   <section id="inter--2" class="parallax winHeight">sdfsf</section> 
 

@@ -1,32 +1,77 @@
 /*
-Jonathan Fuchs
 
+@renardsuper
 https://learn.jquery.com/code-organization/concepts/
 
 */
 ;(function($){
 
+	FastClick.attach(document.body); // instantiate FastClick 
+
+	console.log(Globals);
+
 	var 	APP 	= 	APP || {},
-	 		isTouch = 	Modernizr.touch,
 	 		$win 	= 	$(window),
 			$doc	=	$(document),
+
+			Modernizr = window.Modernizr,
+    		isTouch = Modernizr.touch && navigator.userAgent.match(/(iPhone|iPod|iPad)|BlackBerry|Android/);
+
 			APP = {
 
 		_: function () {
 
+			this.cookie._();
+			this.autoscroll._();
 			this.loading._();
 			this.magnificpopup._();
 			this.flexslider._();
-
 			this.ajax._();
-
-			
-			
 			this.mainNav._();
 			this.sectionHero._();
 			this.parallax._();
 			this.isotope._();
 			this.helpers._();
+
+			this.googleMap._();
+
+		},
+
+		cookie : {
+
+			_: function() {
+				
+				var name 		= 'app',
+					value 		= -1,
+					expires		= 1, 		// days
+					path 		= '';		// page path
+
+				Cookies.set( name , value, { expires: expires, path: path });
+
+			}
+
+		},
+
+		autoscroll : {
+
+			options : {
+				animScrollSpeed: 1000,
+				easing: "easeInOutQuint"
+			},
+
+			_: function() {
+
+				var self = this,
+					options = this.options;
+
+				this.$h = $(Globals.url_hash);
+
+				if(this.$h.length){
+					$('html, body').animate({scrollTop: self.$h.position().top }, options.animScrollSpeed, options.easing);
+				}
+			
+			}
+
 		},
 
 		loading : {
@@ -178,6 +223,7 @@ https://learn.jquery.com/code-organization/concepts/
 				this.$t.removeClass('active');
 			}
 		},
+
 		sectionHero : {
 			_: function(){
 
@@ -361,6 +407,125 @@ https://learn.jquery.com/code-organization/concepts/
 			}
 
 		},
+
+		/*
+
+		Google Map
+
+		*/
+
+		googleMap : {
+
+			options : {
+				mapOptions: {
+						center: { lat: Globals.lat, lng: Globals.lng },
+						zoom: 14,
+						minZoom:5,
+						disableDefaultUI: true,
+						panControl: true,
+						keyboardShortcuts: true,
+						zoomControl: false,
+						rotateControl: false,
+						streetViewControl: false,
+						draggable: true,
+						scrollwheel: false,
+						mapTypeId: google.maps.MapTypeId.ROADMAP,
+						styles:[ 
+							{ "stylers" : [ { "visibility" : "off" } ] },
+							{ "featureType" : "administrative",
+							"stylers" : [ { "visibility" : "on" },
+							    { "saturation" : -100 },
+							    { "lightness" : 30 }
+							  ]
+							},
+							{ "featureType" : "road",
+							"stylers" : [ { "visibility" : "on" },
+							    { "saturation" : -100 },
+							    { "lightness" : 50 }
+							  ]
+							},
+							{ "featureType" : "poi",
+							"stylers" : [ { "saturation" : -100 },
+							    { "visibility" : "off" }
+							  ]
+							},
+							{ "featureType" : "landscape",
+							"stylers" : [ { "visibility" : "on" },
+							    { "saturation" : -100 },
+							    { "lightness" : 55 }
+							  ]
+							},
+							{ "featureType" : "water",
+							"stylers" : [ { "saturation" : -31 },
+							    { "visibility" : "on" }
+							  ]
+							},
+							{ "featureType" : "transit",
+							"stylers" : [ { "visibility" : "on" } ]
+							}
+						]
+        		}
+
+			},
+
+			_: function() {
+
+				var options = this.options;
+
+				this.map;
+				this.marker;
+				this.markers = new Array();
+
+				this.map = new google.maps.Map(document.getElementById('map-canvas'), options.mapOptions);
+				google.maps.event.addDomListener(window, 'load');
+
+				var myLatlng = new google.maps.LatLng(Globals.lat,Globals.lng);
+
+				this._addMarker(myLatlng, 'title');
+
+				//this._fitToMarkers();
+
+			},
+			_addMarker: function(myLatlng,title) {
+
+				var iconSVG = {
+					path: 'M297.6,206.7c82.1,0,149,66.8,149,149c0,24.7-5.8,48.1-17.3,69.7L297.6,604.3L166,425.4 c-11.4-21.4-17.3-45.4-17.3-69.7C148.7,273.5,215.5,206.7,297.6,206.7 M297.6,93.2c-144.9,0-262.4,117.5-262.4,262.4 c0,47.8,12.9,92.6,35.2,131.2l227.2,308.9l227.2-308.9c22.3-38.6,35.2-83.4,35.2-131.2C560.1,210.7,442.6,93.2,297.6,93.2 L297.6,93.2z',
+					fillColor: 'gold',
+					fillOpacity: 1,
+					scale: 0.1,
+					strokeColor: 'gold',
+					strokeWeight: 7
+				};
+
+				this.marker = new google.maps.Marker({
+				     position: myLatlng,
+				     title: title,
+				     icon: iconSVG
+				});
+
+				this.marker.setMap(this.map);
+				this.markers.push(this.marker); 
+				
+			},
+
+			_fitToMarkers: function() {
+
+				var markers = this.markers;
+				var bounds = new google.maps.LatLngBounds();
+
+				for(i=0;i<markers.length;i++) {
+					bounds.extend(markers[i].getPosition());
+				}
+
+				this.map.fitBounds(bounds);
+
+				this.map.setZoom(8);
+
+			}
+
+		},
+
+
 
 		/* Google Analytics */
 
