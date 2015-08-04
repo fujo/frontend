@@ -21,7 +21,7 @@
   </div>
 
   <header>
-    <a href="<?php echo site_url();?>" title="Return to the homepage" id="logo">JNTHN.CH</a>
+    <a href="<?php echo home_url(); ?>" title="Return to the homepage" id="logo">JNTHN.CH</a>
     <a href="#" class="hamburger" rel="nofollow"><span></span></a>
     <nav id="mainNavWrapper">
     <?php

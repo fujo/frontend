@@ -18,6 +18,43 @@ get_header(); ?>
 
 <div class="content">
 
+  <?php 
+
+  $args = array(
+    'posts_per_page'   => 999,
+    'offset'           => 0,
+    'category'         => '',
+    'category_name'    => '',
+    'orderby'          => '',
+    'order'            => '',
+    'include'          => '',
+    'exclude'          => '',
+    'meta_key'         => '',
+    'meta_value'       => '',
+    'post_type'        => 'page',
+    'post_mime_type'   => '',
+    'post_parent'      => 0,
+    'author'           => '',
+    'post_status'      => 'publish',
+    'suppress_filters' => true 
+  );
+  
+  $pages = get_posts( $args );
+
+  ?>
+
+  <?php foreach ( $pages as $page ): ?>
+  <section id="<?php echo $page->post_name; ?>">
+      <?php echo $page->post_title; ?>
+      <?php 
+        set_query_var( 'pageID', $page->ID );
+        get_template_part( 'templates/home-'.$page->post_name); 
+      ?>
+      <?php //the_content(); ?>
+  </section>
+  <?php endforeach; wp_reset_postdata();?>
+
+
   <?php query_posts('cat=3'); ?>
   <?php if (have_posts()) : ?> 
   <?php while (have_posts()) : the_post(); ?>

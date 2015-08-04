@@ -11,7 +11,7 @@
   </footer>
   <!-- Globals -->
   <script type="text/javascript">
-  var Globals = {
+  var app_globals = {
     url_base:   '<?php echo get_bloginfo('url'); ?>', 
     url_path:   window.location.pathname, 
     url_hash:   window.location.hash,

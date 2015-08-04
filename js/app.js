@@ -8,7 +8,7 @@ https://learn.jquery.com/code-organization/concepts/
 
 	FastClick.attach(document.body); // instantiate FastClick 
 
-	console.log(Globals);
+	console.log(app_globals);
 
 	var 	APP 	= 	APP || {},
 	 		$win 	= 	$(window),
@@ -64,7 +64,7 @@ https://learn.jquery.com/code-organization/concepts/
 				var self = this,
 					options = this.options;
 
-				this.$h = $(Globals.url_hash);
+				this.$h = $(app_globals.url_hash);
 
 				if(this.$h.length){
 					$('html, body').animate({scrollTop: self.$h.position().top }, options.animScrollSpeed, options.easing);
@@ -301,12 +301,23 @@ https://learn.jquery.com/code-organization/concepts/
 		helpers : {
 
 			_: function() {
+				this.placeholders._();
 				this.fixHeader._();
 				this.scrollDown._();
 				this.scrollHome._();
 				this.winHeight._();
 				this.fader._();
 				this.jumbotron._();
+
+			},
+
+			placeholders : {
+				_: function() {
+
+					$('input, textarea').placeholder();
+
+				}
+
 			},
 
 			vivus : {
@@ -432,7 +443,7 @@ https://learn.jquery.com/code-organization/concepts/
 
 			options : {
 				mapOptions: {
-						center: { lat: Globals.lat, lng: Globals.lng },
+						center: { lat: app_globals.lat, lng: app_globals.lng },
 						zoom: 14,
 						minZoom:5,
 						disableDefaultUI: true,
@@ -465,7 +476,7 @@ https://learn.jquery.com/code-organization/concepts/
 				this.map = new google.maps.Map(document.getElementById('map-canvas'), options.mapOptions);
 				google.maps.event.addDomListener(window, 'load');
 
-				var myLatlng = new google.maps.LatLng(Globals.lat,Globals.lng);
+				var myLatlng = new google.maps.LatLng(app_globals.lat,app_globals.lng);
 
 				this._addMarker(myLatlng, 'title');
 
