@@ -241,7 +241,11 @@ https://learn.jquery.com/code-organization/concepts/
 			}
 		},
 
-		/* parallax */
+		/* 
+
+		parallax 
+
+		*/
 
 		parallax : {  
 			options : {
@@ -259,6 +263,12 @@ https://learn.jquery.com/code-organization/concepts/
 				})
 			}
 		},
+
+		/* 
+
+		parallax 
+
+		*/
 
 		isotope : {
 			_: function(){
@@ -282,7 +292,11 @@ https://learn.jquery.com/code-organization/concepts/
 			}
 		},
 
-		/* interactive and css things */
+		/* 
+
+		interactive and css things 
+
+		*/
 
 		helpers : {
 
@@ -424,46 +438,18 @@ https://learn.jquery.com/code-organization/concepts/
 						disableDefaultUI: true,
 						panControl: true,
 						keyboardShortcuts: true,
-						zoomControl: false,
+						zoomControl: true,
+						zoomControlOptions: {
+    						style: google.maps.ZoomControlStyle.SMALL 
+  						},
 						rotateControl: false,
 						streetViewControl: false,
 						draggable: true,
+						panControl: false,
 						scrollwheel: false,
 						mapTypeId: google.maps.MapTypeId.ROADMAP,
-						styles:[ 
-							{ "stylers" : [ { "visibility" : "off" } ] },
-							{ "featureType" : "administrative",
-							"stylers" : [ { "visibility" : "on" },
-							    { "saturation" : -100 },
-							    { "lightness" : 30 }
-							  ]
-							},
-							{ "featureType" : "road",
-							"stylers" : [ { "visibility" : "on" },
-							    { "saturation" : -100 },
-							    { "lightness" : 50 }
-							  ]
-							},
-							{ "featureType" : "poi",
-							"stylers" : [ { "saturation" : -100 },
-							    { "visibility" : "off" }
-							  ]
-							},
-							{ "featureType" : "landscape",
-							"stylers" : [ { "visibility" : "on" },
-							    { "saturation" : -100 },
-							    { "lightness" : 55 }
-							  ]
-							},
-							{ "featureType" : "water",
-							"stylers" : [ { "saturation" : -31 },
-							    { "visibility" : "on" }
-							  ]
-							},
-							{ "featureType" : "transit",
-							"stylers" : [ { "visibility" : "on" } ]
-							}
-						]
+						styles:[{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"administrative","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"administrative.country","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"administrative.country","elementType":"geometry","stylers":[{"visibility":"simplified"}]},{"featureType":"administrative.country","elementType":"labels.text","stylers":[{"visibility":"simplified"}]},{"featureType":"administrative.province","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"administrative.locality","elementType":"all","stylers":[{"visibility":"simplified"},{"saturation":"-100"},{"lightness":"30"}]},{"featureType":"administrative.neighborhood","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"administrative.land_parcel","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"all","stylers":[{"visibility":"simplified"},{"gamma":"0.00"},{"lightness":"74"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"landscape.man_made","elementType":"all","stylers":[{"lightness":"3"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road","elementType":"geometry","stylers":[{"visibility":"simplified"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}]
+						//styles:[{"stylers":[{"visibility":"simplified"}]},{"stylers":[{"color":"#131314"}]},{"featureType":"water","stylers":[{"color":"#131313"},{"lightness":7}]},{"elementType":"labels.text.fill","stylers":[{"visibility":"on"},{"lightness":25}]}]
         		}
 
 			},
@@ -525,9 +511,11 @@ https://learn.jquery.com/code-organization/concepts/
 
 		},
 
+		/* 
 
+		Google Analytics 
 
-		/* Google Analytics */
+		*/
 
 		googleAnalytics : {
 
