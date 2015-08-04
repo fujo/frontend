@@ -28,11 +28,12 @@ register_post_type(
 		'supports' => array(       
 			'title',       
 			'editor',   
-			'thumbnail',
-			'custom-fields'     
+			'thumbnail'
+			//'custom-fields'     
 			),     
 		'has_archive' => true,
-		'menu_position' => 5   
+		'menu_position' => 5,
+		'rewrite' => array('slug' => 'projects')
 		) 
 	);
 }
